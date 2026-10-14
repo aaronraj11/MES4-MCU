@@ -1,0 +1,212 @@
+(footprint "Buzzer_MLT-9650"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "MLT-9650 9.6x9.6x5.0 mm SMD ACTIVE (self-drive) electromagnetic buzzer, 5 V rated (LCSC C96127). Pads from EasyEDA/LCSC; pad 1 = +, pad 2 = -.")
+	(tags "buzzer active self-drive magnetic 9650 MLT-9650")
+	(property "Reference" "BZ1"
+		(at 0 -3.2 0)
+		(layer "F.Fab")
+		(uuid "6d86b6a9-ac2e-43b7-bb86-8040dc84cf6b")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "MLT-9650"
+		(at 0 3.2 0)
+		(layer "F.Fab")
+		(uuid "502f1982-3ce5-4a90-a88c-b91f18411ba9")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d59e85ac-47b1-4c6c-901f-97d1c0027e8f")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "bcf97b4a-e36d-4c70-8e15-fee53d3a6f3b")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -5.08 1.23)
+		(end -5.08 5.08)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "50160f07-4dae-4411-9249-d7299922f4bd")
+	)
+	(fp_line
+		(start -5.08 -3.3)
+		(end -5.08 -1.23)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "60b1d599-faa2-414d-8346-33342215a2c3")
+	)
+	(fp_line
+		(start 5.08 5.08)
+		(end -5.08 5.08)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "5e944ec9-6b77-4d73-a746-c5f480853cc7")
+	)
+	(fp_line
+		(start 5.08 1.23)
+		(end 5.08 5.08)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "cbfa9a7a-50ee-4c1b-9512-ebbe321c5cbd")
+	)
+	(fp_line
+		(start 5.08 -5.08)
+		(end 5.08 -1.23)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "df41de95-90d9-402f-b3ae-ba21e7275c66")
+	)
+	(fp_line
+		(start -5.08 -3.3)
+		(end -3.3 -5.08)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "28e0ae49-0e98-4606-a094-0639427de750")
+	)
+	(fp_line
+		(start -3.3 -5.08)
+		(end 5.08 -5.08)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "544ca80d-9eaf-4493-b6c7-08c1499dbc81")
+	)
+	(fp_line
+		(start 2.86 2.54)
+		(end 4.26 2.54)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "852dcb17-4392-4cf7-97ba-11233a130085")
+	)
+	(fp_line
+		(start 3.56 1.84)
+		(end 3.56 3.24)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "af2623ad-c073-4544-8467-aeabcbab8d05")
+	)
+	(fp_line
+		(start -4.38 2.54)
+		(end -2.98 2.54)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "f6090715-e7d3-44ff-836c-08235d8e0032")
+	)
+	(fp_rect
+		(start -4.8 -4.8)
+		(end 4.8 4.8)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "3da1ff33-520e-4cf8-adaf-7b1f02df79c6")
+	)
+	(fp_rect
+		(start -6.0 -5.35)
+		(end 6.0 5.35)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "63815ce0-290b-49f9-9382-e6da96513375")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "f64f9278-c309-4e13-a37e-62d674bd0d5d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at 4.5 0)
+		(size 2.5 1.8)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "9a843b65-6858-458b-a48b-7c577c576716")
+	)
+	(pad "2" smd rect
+		(at -4.5 0)
+		(size 2.5 1.8)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "b6a2591b-7f7a-48bf-8f32-4e0e20152f3a")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/MES4-MCU.3dshapes/Buzzer_MLT-9650.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

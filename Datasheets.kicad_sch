@@ -1,0 +1,4053 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "6de9c208-01c8-40e4-bb6a-9c9c8ad53093")
+	(paper "A3")
+	(title_block
+		(title "MES4-MCU – Datasheets & references")
+		(date "2026-10-14")
+		(rev "A-d6")
+		(company "Monkey Robotics")
+		(comment 1 "Designer: Aaron")
+		(comment 2 "MES4-MCU · STM32G0B1 M.2 2242 CAN module · 4-layer 0.8 mm JLC04081H-3313")
+	)
+	(lib_symbols)
+	(text "Every part in the BOM with its manufacturer datasheet and LCSC page (JLCPCB assembly part numbers)."
+		(exclude_from_sim no)
+		(at 22.86 30.48 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+			(justify left top)
+		)
+		(uuid "03189f0c-b418-455b-ab0a-90e560db6ab5")
+	)
+	(text "DATASHEETS & REFERENCE DOCUMENTS"
+		(exclude_from_sim no)
+		(at 22.86 22.86 0)
+		(effects
+			(font
+				(size 3 3)
+				(bold yes)
+			)
+			(justify left top)
+		)
+		(uuid "15c1e86a-10a1-4d86-81a6-614397e1a740")
+	)
+	(text "How to use: blue entries are hyperlinks. In KiCad hover/click the link; in the exported PDF just click it.\nEach symbol's own Datasheet field holds the same link, so selecting a part and pressing D opens its datasheet.\nLCSC links open the LCSC part page (stock, price, footprint); LCSC datasheet links open LCSC's PDF viewer.\nPinouts of U1, U2, U3, X1, D1, D2, Q1–Q4, BZ1 were checked against these datasheets (last full re-check 2026-10-13). Every symbol also carries MPN + Manufacturer fields."
+		(exclude_from_sim no)
+		(at 22.86 163.83 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left top)
+		)
+		(uuid "ff9c970e-41f3-4a5a-8257-f1b936f84355")
+	)
+	(table
+		(column_count 7)
+		(border
+			(external yes)
+			(header yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(separators
+			(rows yes)
+			(cols yes)
+			(stroke
+				(width 0)
+				(type solid)
+			)
+		)
+		(column_widths 38.1 8.89 44.45 38.1 91.44 20.32 50.8)
+		(row_heights 3.81 3.81 3.81 3.81 3.81 3.81 3.81 3.81 3.81 3.81 3.81 3.81
+			3.81 3.81 3.81 3.81 3.81 3.81 3.81 3.81 3.81 3.81 3.81 3.81 3.81 3.81
+			3.81 3.81 3.81 3.81 3.81
+		)
+		(cells
+			(table_cell "Ref"
+				(exclude_from_sim no)
+				(at 22.86 40.64 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 194 194 194 1)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(bold yes)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "5ca3b114-2a4d-4ffe-84c7-d6a949e7806e")
+			)
+			(table_cell "Qty"
+				(exclude_from_sim no)
+				(at 60.96 40.64 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 194 194 194 1)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(bold yes)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "5c798863-4135-4231-8596-190dc2b05a85")
+			)
+			(table_cell "Part number"
+				(exclude_from_sim no)
+				(at 69.85 40.64 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 194 194 194 1)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(bold yes)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "58c1b703-775e-4e17-878c-3895c9f5c416")
+			)
+			(table_cell "Manufacturer"
+				(exclude_from_sim no)
+				(at 114.3 40.64 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 194 194 194 1)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(bold yes)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "7b2d31fc-38cc-42fa-b710-f0465288cd8a")
+			)
+			(table_cell "Function"
+				(exclude_from_sim no)
+				(at 152.4 40.64 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 194 194 194 1)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(bold yes)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "d428fdb5-ec61-4d49-beb7-e9a25be82376")
+			)
+			(table_cell "LCSC"
+				(exclude_from_sim no)
+				(at 243.84 40.64 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 194 194 194 1)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(bold yes)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "5cf5fcbe-3bd5-4222-a7f5-5fb21f782851")
+			)
+			(table_cell "Datasheet  (click)"
+				(exclude_from_sim no)
+				(at 264.16 40.64 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 194 194 194 1)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(bold yes)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "59bdb75a-793e-43eb-88a0-701e218a2217")
+			)
+			(table_cell "U1"
+				(exclude_from_sim no)
+				(at 22.86 44.45 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "0dcc1ac4-5a6d-4ec6-8de5-31ae654fc3eb")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 60.96 44.45 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "93a3f6cf-3325-49e6-8801-7e7e07ec8352")
+			)
+			(table_cell "STM32G0B1KBT6"
+				(exclude_from_sim no)
+				(at 69.85 44.45 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "49d4e1de-5d06-44f2-a815-1401ad52c7cf")
+			)
+			(table_cell "STMicroelectronics"
+				(exclude_from_sim no)
+				(at 114.3 44.45 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "f7595637-0080-44c7-a344-d648e33a61a8")
+			)
+			(table_cell "MCU · Cortex-M0+ 64 MHz · 128 KB flash · LQFP-32 (NOT the ...T6N variant)"
+				(exclude_from_sim no)
+				(at 152.4 44.45 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "b21eaff5-94c3-42ce-b617-d80bea7c6fb8")
+			)
+			(table_cell "C5270165"
+				(exclude_from_sim no)
+				(at 243.84 44.45 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C5270165.html")
+				)
+				(uuid "2b9a4fcd-0081-4fb6-a5ad-52517fe07c38")
+			)
+			(table_cell "DS13560 (ST)"
+				(exclude_from_sim no)
+				(at 264.16 44.45 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.st.com/resource/en/datasheet/stm32g0b1re.pdf")
+				)
+				(uuid "08f2beb4-5ce6-443c-8b2c-1510eafeb512")
+			)
+			(table_cell "  ↳ U1 docs"
+				(exclude_from_sim no)
+				(at 22.86 48.26 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 235 242 255 1)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "55f981cf-2025-4b5f-bc0a-ff1d90a30a25")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 60.96 48.26 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "ef619f04-a17a-44c7-a3d0-81109b8719dd")
+			)
+			(table_cell "RM0444"
+				(exclude_from_sim no)
+				(at 69.85 48.26 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "016fdb45-d251-4e79-8842-a0ae95f0f3de")
+			)
+			(table_cell "STMicroelectronics"
+				(exclude_from_sim no)
+				(at 114.3 48.26 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "a6147a5c-a00d-4099-ae9e-0041db937e28")
+			)
+			(table_cell "Reference manual: RCC/HSE bypass, FDCAN, option bytes (nBOOT_SEL)"
+				(exclude_from_sim no)
+				(at 152.4 48.26 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "b8d56eb9-cf8d-46fc-bb7d-02ffacb7f731")
+			)
+			(table_cell "–"
+				(exclude_from_sim no)
+				(at 243.84 48.26 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "22f23b1d-95a4-498b-b16d-a316b77b8ffa")
+			)
+			(table_cell "RM0444"
+				(exclude_from_sim no)
+				(at 264.16 48.26 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.st.com/resource/en/reference_manual/rm0444-stm32g0x1-advanced-armbased-32bit-mcus-stmicroelectronics.pdf")
+				)
+				(uuid "74bce5b7-a92f-4c65-87a3-f1c77d6d9948")
+			)
+			(table_cell "  ↳ U1 docs"
+				(exclude_from_sim no)
+				(at 22.86 52.07 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 235 242 255 1)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "283ab358-f019-425f-b158-12d43ea93a09")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 60.96 52.07 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "a614da5f-3829-4d82-9448-60c2dbc4bdd5")
+			)
+			(table_cell "AN2606"
+				(exclude_from_sim no)
+				(at 69.85 52.07 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "dee2e596-ee43-4eb6-bdb8-9c1a0b3d2499")
+			)
+			(table_cell "STMicroelectronics"
+				(exclude_from_sim no)
+				(at 114.3 52.07 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "8fb94476-dccf-4c80-b19e-5b4576458c94")
+			)
+			(table_cell "System bootloader: USART1 PA9/PA10 (no FDCAN on this package)"
+				(exclude_from_sim no)
+				(at 152.4 52.07 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "17a5782c-a0f2-4afe-acc2-3d6eb9f309db")
+			)
+			(table_cell "–"
+				(exclude_from_sim no)
+				(at 243.84 52.07 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "170089e8-1b0b-423b-b648-a0b6216bae8f")
+			)
+			(table_cell "AN2606"
+				(exclude_from_sim no)
+				(at 264.16 52.07 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.st.com/resource/en/application_note/an2606-stm32-microcontroller-system-memory-boot-mode-stmicroelectronics.pdf")
+				)
+				(uuid "be0c65e0-87d4-417f-9e2f-b21f8f8c90c2")
+			)
+			(table_cell "  ↳ U1 docs"
+				(exclude_from_sim no)
+				(at 22.86 55.88 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 235 242 255 1)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "84bec4f4-14e9-4e5f-b931-a078e83edbd9")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 60.96 55.88 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "a013c33a-bc11-48a4-b928-c0bf7f838513")
+			)
+			(table_cell "AN5096"
+				(exclude_from_sim no)
+				(at 69.85 55.88 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "919c5a24-23f9-4c17-8fc2-7fc2e157617a")
+			)
+			(table_cell "STMicroelectronics"
+				(exclude_from_sim no)
+				(at 114.3 55.88 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "a634acea-78d3-43c1-9718-9f45faf790f7")
+			)
+			(table_cell "STM32G0 hardware getting started: decoupling, NRST, clocks"
+				(exclude_from_sim no)
+				(at 152.4 55.88 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "a2cec56c-7ffc-488b-b4c3-e233aa864510")
+			)
+			(table_cell "–"
+				(exclude_from_sim no)
+				(at 243.84 55.88 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "76a02ae2-206b-4255-9c04-05c71507b880")
+			)
+			(table_cell "AN5096"
+				(exclude_from_sim no)
+				(at 264.16 55.88 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.st.com/resource/en/application_note/an5096-getting-started-with-stm32g0-series-hardware-development-stmicroelectronics.pdf")
+				)
+				(uuid "e15c2dc9-72db-4a66-a5c9-a8e54c604fc7")
+			)
+			(table_cell "  ↳ U1 docs"
+				(exclude_from_sim no)
+				(at 22.86 59.69 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type color)
+					(color 235 242 255 1)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "c5e6085e-7630-4446-b213-065208dff9d0")
+			)
+			(table_cell ""
+				(exclude_from_sim no)
+				(at 60.96 59.69 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "c0df65c5-e779-4660-9881-bf6d931e823a")
+			)
+			(table_cell "Product page"
+				(exclude_from_sim no)
+				(at 69.85 59.69 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "f8219e8b-b082-4518-bce5-1351679a9f35")
+			)
+			(table_cell "STMicroelectronics"
+				(exclude_from_sim no)
+				(at 114.3 59.69 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "2b8e352a-4abb-47e5-98b3-8c6d5b2090d3")
+			)
+			(table_cell "STM32G0B1KB: all documents, errata, CAD models"
+				(exclude_from_sim no)
+				(at 152.4 59.69 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "d3ae9fb8-7596-4b9f-9506-11aa32937868")
+			)
+			(table_cell "–"
+				(exclude_from_sim no)
+				(at 243.84 59.69 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "1b6e12aa-024d-46d0-9b26-a388ad859ca3")
+			)
+			(table_cell "Product page"
+				(exclude_from_sim no)
+				(at 264.16 59.69 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.st.com/en/microcontrollers-microprocessors/stm32g0b1kb.html")
+				)
+				(uuid "0e4eac72-96c5-4f2e-b2f8-a56d092b7fce")
+			)
+			(table_cell "U2"
+				(exclude_from_sim no)
+				(at 22.86 63.5 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "a3f25968-bce9-4a59-a826-4227a47fc0f4")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 60.96 63.5 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "c62aff28-3218-44bc-bd07-043b79038b2c")
+			)
+			(table_cell "TLV76733DRVR"
+				(exclude_from_sim no)
+				(at 69.85 63.5 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "66a0c9b9-7443-4a98-91f1-c5fd99da05d1")
+			)
+			(table_cell "Texas Instruments"
+				(exclude_from_sim no)
+				(at 114.3 63.5 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "a8943a7d-4c65-430d-b32e-da8b74d0eb10")
+			)
+			(table_cell "LDO 3.3 V 1 A · VIN 2.5–16 V · thermal shutdown · WSON-6 2×2"
+				(exclude_from_sim no)
+				(at 152.4 63.5 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "5bb861e2-0e81-4a6a-b0f1-94f816061b0d")
+			)
+			(table_cell "C2848334"
+				(exclude_from_sim no)
+				(at 243.84 63.5 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C2848334.html")
+				)
+				(uuid "e0f29713-7d68-4dba-927f-fcfbb781cf2b")
+			)
+			(table_cell "TLV767 (TI)"
+				(exclude_from_sim no)
+				(at 264.16 63.5 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.ti.com/lit/ds/symlink/tlv767.pdf")
+				)
+				(uuid "d400b948-3b5e-4bf5-b45f-07964ab4aa34")
+			)
+			(table_cell "U3"
+				(exclude_from_sim no)
+				(at 22.86 67.31 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "f2f9e319-528e-4727-817b-8f6c7a4cb92f")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 60.96 67.31 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "a33605d4-cd2e-4fdd-8f58-8c57305fc68b")
+			)
+			(table_cell "SN65HVD230DR"
+				(exclude_from_sim no)
+				(at 69.85 67.31 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "a38e2a0b-182d-4ed7-977b-37d8da730ac3")
+			)
+			(table_cell "Texas Instruments"
+				(exclude_from_sim no)
+				(at 114.3 67.31 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "8a52ad69-0fba-4f92-9a7a-1a4274b2647b")
+			)
+			(table_cell "3.3 V CAN transceiver · SOIC-8"
+				(exclude_from_sim no)
+				(at 152.4 67.31 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "e310ea7b-939a-4493-bf2b-1ea75ef0f339")
+			)
+			(table_cell "C12084"
+				(exclude_from_sim no)
+				(at 243.84 67.31 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C12084.html")
+				)
+				(uuid "a8652a45-dd12-4fe9-9cd6-e06d7620b860")
+			)
+			(table_cell "SN65HVD230 (TI)"
+				(exclude_from_sim no)
+				(at 264.16 67.31 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.ti.com/lit/ds/symlink/sn65hvd230.pdf")
+				)
+				(uuid "56a800c9-80d5-4396-aa1b-59916183bff9")
+			)
+			(table_cell "X1"
+				(exclude_from_sim no)
+				(at 22.86 71.12 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "4484d19c-1e17-47e0-af44-d18b256f0f5e")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 60.96 71.12 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "70e21463-b5de-4532-b8b9-76dbab143352")
+			)
+			(table_cell "SX2M8.000M20F30TNN"
+				(exclude_from_sim no)
+				(at 69.85 71.12 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "071f2d6f-b2e9-43f6-b816-530a15667400")
+			)
+			(table_cell "SCTF"
+				(exclude_from_sim no)
+				(at 114.3 71.12 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "37b8eac3-1bf5-40df-b221-1062fa9645fc")
+			)
+			(table_cell "8 MHz CMOS oscillator · ±20 ppm (+±30 ppm temp) · 2.5 × 2.0 mm"
+				(exclude_from_sim no)
+				(at 152.4 71.12 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "88bb2c7d-ad09-4e11-abff-0b6b5da019da")
+			)
+			(table_cell "C2901594"
+				(exclude_from_sim no)
+				(at 243.84 71.12 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C2901594.html")
+				)
+				(uuid "89c7a531-e9a6-44c1-bd4d-74ea42e21fa3")
+			)
+			(table_cell "SX2M series (LCSC)"
+				(exclude_from_sim no)
+				(at 264.16 71.12 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/datasheet/C2901594.pdf")
+				)
+				(uuid "6b8cbe1d-425a-4c5f-805c-b582da4b8333")
+			)
+			(table_cell "D1"
+				(exclude_from_sim no)
+				(at 22.86 74.93 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "2e226839-2fa9-4f4d-86da-7f7b8c333de9")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 60.96 74.93 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "4cc5a7fc-7fd7-45c2-b935-128b3dfab90e")
+			)
+			(table_cell "NUP2105LT1G"
+				(exclude_from_sim no)
+				(at 69.85 74.93 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "5a71d19f-9c34-47b9-b903-aeffa7978d39")
+			)
+			(table_cell "onsemi"
+				(exclude_from_sim no)
+				(at 114.3 74.93 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "cf7a0b97-2da7-44c3-8b02-bf6bc31c4d6c")
+			)
+			(table_cell "Dual-line CAN bus ESD protector · SOT-23"
+				(exclude_from_sim no)
+				(at 152.4 74.93 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "fc968cd3-e438-4be7-a6c9-60343029e45a")
+			)
+			(table_cell "C14486"
+				(exclude_from_sim no)
+				(at 243.84 74.93 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C14486.html")
+				)
+				(uuid "77d4bc8d-acf4-413a-ab44-d6f1d212fa44")
+			)
+			(table_cell "NUP2105L (onsemi)"
+				(exclude_from_sim no)
+				(at 264.16 74.93 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.onsemi.com/pdf/datasheet/nup2105l-d.pdf")
+				)
+				(uuid "eddaddd1-377c-41c1-aaed-8956d7c137df")
+			)
+			(table_cell "D2"
+				(exclude_from_sim no)
+				(at 22.86 78.74 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "f17dbbaa-be57-460f-b7e2-7d5e96098145")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 60.96 78.74 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "96d24be7-e771-40d1-a166-9296b6090957")
+			)
+			(table_cell "SMF6.0A"
+				(exclude_from_sim no)
+				(at 69.85 78.74 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "2d873077-547e-46f5-939c-33270fe4a006")
+			)
+			(table_cell "Hongjiacheng"
+				(exclude_from_sim no)
+				(at 114.3 78.74 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "74fcf920-28a1-4046-a04b-ede1a858ec21")
+			)
+			(table_cell "TVS 6 V 200 W unidirectional · SMF / SOD-123FL"
+				(exclude_from_sim no)
+				(at 152.4 78.74 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "8430155b-c7ca-406a-80ff-385711c66ece")
+			)
+			(table_cell "C19077499"
+				(exclude_from_sim no)
+				(at 243.84 78.74 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C19077499.html")
+				)
+				(uuid "6970cc48-ccb4-48ce-b9c5-e384ad926024")
+			)
+			(table_cell "SMF series (LCSC)"
+				(exclude_from_sim no)
+				(at 264.16 78.74 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/datasheet/C19077499.pdf")
+				)
+				(uuid "98041fea-fd73-4b43-bbd5-5aea9586c437")
+			)
+			(table_cell "D3"
+				(exclude_from_sim no)
+				(at 22.86 82.55 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "70a36aa0-d321-4fa0-a81f-ee08349297fb")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 60.96 82.55 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "fafb8229-72bd-42e5-90b1-5f8314cb1dc1")
+			)
+			(table_cell "1N4148WS"
+				(exclude_from_sim no)
+				(at 69.85 82.55 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "4bb3dbd6-f2e9-4215-8a5e-6e3928c7634b")
+			)
+			(table_cell "Changjing (CJ)"
+				(exclude_from_sim no)
+				(at 114.3 82.55 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "2fbbe71a-fc43-414a-bbe4-d7987f986ea5")
+			)
+			(table_cell "Switching diode 100 V 150 mA · SOD-323"
+				(exclude_from_sim no)
+				(at 152.4 82.55 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "80567648-62e0-400e-bac2-d70a983a5410")
+			)
+			(table_cell "C2128"
+				(exclude_from_sim no)
+				(at 243.84 82.55 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C2128.html")
+				)
+				(uuid "fdf45bd0-0ad6-4c86-ba66-4fb7426a5e81")
+			)
+			(table_cell "1N4148WS (LCSC)"
+				(exclude_from_sim no)
+				(at 264.16 82.55 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/datasheet/C2128.pdf")
+				)
+				(uuid "087e1bec-8e41-4062-a82c-dcf65b843d86")
+			)
+			(table_cell "Q1, Q2, Q4"
+				(exclude_from_sim no)
+				(at 22.86 86.36 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "7fcf2f7c-c18e-4617-aa0d-e6227b22aefc")
+			)
+			(table_cell "3"
+				(exclude_from_sim no)
+				(at 60.96 86.36 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "ef623dd8-da36-4a5d-ad1f-d08a1017fbd7")
+			)
+			(table_cell "MMBT3904"
+				(exclude_from_sim no)
+				(at 69.85 86.36 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "9bf41280-0250-429a-9bc2-64600609cbb3")
+			)
+			(table_cell "Changjing (CJ)"
+				(exclude_from_sim no)
+				(at 114.3 86.36 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "365ff021-e1f0-4572-82dc-fb4b3866af15")
+			)
+			(table_cell "NPN transistor 40 V 200 mA · SOT-23"
+				(exclude_from_sim no)
+				(at 152.4 86.36 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "85da5429-8902-42a5-ac5a-a31766ab2c08")
+			)
+			(table_cell "C20526"
+				(exclude_from_sim no)
+				(at 243.84 86.36 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C20526.html")
+				)
+				(uuid "911b5bb1-8225-4f76-bb64-d7dc003453de")
+			)
+			(table_cell "MMBT3904 (LCSC)"
+				(exclude_from_sim no)
+				(at 264.16 86.36 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/datasheet/C20526.pdf")
+				)
+				(uuid "75d2940e-20f2-47c9-bb55-6690aafecd7f")
+			)
+			(table_cell "Q3"
+				(exclude_from_sim no)
+				(at 22.86 90.17 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "7710a265-6e1c-4699-b9e1-a2546c0bc2a7")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 60.96 90.17 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "9dfba44d-a085-4c7c-bd44-adcc98ec6f3c")
+			)
+			(table_cell "AO3400A"
+				(exclude_from_sim no)
+				(at 69.85 90.17 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "b80cda27-20e2-419c-a165-fb9efd663565")
+			)
+			(table_cell "Alpha & Omega"
+				(exclude_from_sim no)
+				(at 114.3 90.17 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "a37e1b32-95a3-4c4a-b288-98e55121cf13")
+			)
+			(table_cell "N-MOSFET 30 V 5.7 A · SOT-23"
+				(exclude_from_sim no)
+				(at 152.4 90.17 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "23b369bb-9f86-4830-b156-4fc1ff039427")
+			)
+			(table_cell "C20917"
+				(exclude_from_sim no)
+				(at 243.84 90.17 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C20917.html")
+				)
+				(uuid "830e4b16-10c5-4bf7-8396-39c506fdb71c")
+			)
+			(table_cell "AO3400A (AOS)"
+				(exclude_from_sim no)
+				(at 264.16 90.17 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.aosmd.com/res/datasheets/AO3400A.pdf")
+				)
+				(uuid "a7ffb212-d6f2-494d-b950-014c37a42c51")
+			)
+			(table_cell "BZ1"
+				(exclude_from_sim no)
+				(at 22.86 93.98 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "a6e2a67e-6b82-4b0f-a4d2-79a09f31ac76")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 60.96 93.98 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "c01cfa4a-6d2a-4edd-909b-367354956bb1")
+			)
+			(table_cell "KLJ-5018-5040"
+				(exclude_from_sim no)
+				(at 69.85 93.98 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "9247a989-8888-4634-884e-a77fb2b686a5")
+			)
+			(table_cell "Changzhou Keliking (KELIKING)"
+				(exclude_from_sim no)
+				(at 114.3 93.98 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "6e7dfa1e-70dd-479b-b5e0-8b42c7b26140")
+			)
+			(table_cell "Passive buzzer 5 V, 25 Ω, 4 kHz PWM, ≥ 90 dB · 5.5 × 5.5 × 1.8 mm"
+				(exclude_from_sim no)
+				(at 152.4 93.98 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "69b2076c-d684-422d-9085-df37035ba226")
+			)
+			(table_cell "C18186309"
+				(exclude_from_sim no)
+				(at 243.84 93.98 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C18186309.html")
+				)
+				(uuid "197e7e72-5d67-4110-8e5a-1d1a8b0c2122")
+			)
+			(table_cell "KLJ-5018-5040 (LCSC)"
+				(exclude_from_sim no)
+				(at 264.16 93.98 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/datasheet/C18186309.pdf")
+				)
+				(uuid "888d0701-274a-4684-a88d-153c7ffbc748")
+			)
+			(table_cell "LED1"
+				(exclude_from_sim no)
+				(at 22.86 97.79 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "798979fb-af83-4a0e-8c36-a42e0a1ba48e")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 60.96 97.79 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "4e98b3d3-19df-49e7-b96e-6a48d88d51dd")
+			)
+			(table_cell "NCD0805R1"
+				(exclude_from_sim no)
+				(at 69.85 97.79 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "6e27c2d3-ff4b-4036-ae8d-b34eb4073888")
+			)
+			(table_cell "NationStar"
+				(exclude_from_sim no)
+				(at 114.3 97.79 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "8491cf86-58d5-41b3-8da2-625b9da0cc14")
+			)
+			(table_cell "LED red · 0805"
+				(exclude_from_sim no)
+				(at 152.4 97.79 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "6d67e0f3-530b-40b6-962b-d332ca96426a")
+			)
+			(table_cell "C84256"
+				(exclude_from_sim no)
+				(at 243.84 97.79 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C84256.html")
+				)
+				(uuid "398d3c72-a602-4ade-b177-a2ccf61c8234")
+			)
+			(table_cell "NCD0805R1 (LCSC)"
+				(exclude_from_sim no)
+				(at 264.16 97.79 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/datasheet/C84256.pdf")
+				)
+				(uuid "bd569355-e47e-4b72-a10c-1fffba1681ab")
+			)
+			(table_cell "LED2"
+				(exclude_from_sim no)
+				(at 22.86 101.6 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "0fce7ff6-36ec-4b4c-8bc5-aaba5f8f61e4")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 60.96 101.6 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "4bd08be6-d958-4810-9604-5412b705d508")
+			)
+			(table_cell "KT-0805G"
+				(exclude_from_sim no)
+				(at 69.85 101.6 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "5a52d64b-5e64-4844-ba2b-f85b595e76e3")
+			)
+			(table_cell "Hubei KENTO"
+				(exclude_from_sim no)
+				(at 114.3 101.6 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "cc109bcd-3607-4542-ba8f-dbe32bd6cc13")
+			)
+			(table_cell "LED emerald green · 0805"
+				(exclude_from_sim no)
+				(at 152.4 101.6 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "4c048a06-f152-49f7-9382-a5017b833e34")
+			)
+			(table_cell "C2297"
+				(exclude_from_sim no)
+				(at 243.84 101.6 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C2297.html")
+				)
+				(uuid "1972a028-7b78-4888-acfe-a1ae6cae51d3")
+			)
+			(table_cell "KT-0805G (LCSC)"
+				(exclude_from_sim no)
+				(at 264.16 101.6 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/datasheet/C2297.pdf")
+				)
+				(uuid "b3bc0121-df03-4e42-a308-162d76dbab5d")
+			)
+			(table_cell "LED3"
+				(exclude_from_sim no)
+				(at 22.86 105.41 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "fcd2d53f-5a7f-4c70-bd74-256466fff112")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 60.96 105.41 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "a1d09261-5bd4-447d-bb34-5142e0bc659c")
+			)
+			(table_cell "KT-0805W"
+				(exclude_from_sim no)
+				(at 69.85 105.41 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "41a19b81-7e17-4184-8c3c-a4571b69be23")
+			)
+			(table_cell "Hubei KENTO"
+				(exclude_from_sim no)
+				(at 114.3 105.41 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "03578a84-eb30-4395-a1f2-0ff68cc8e0b0")
+			)
+			(table_cell "LED white · 0805"
+				(exclude_from_sim no)
+				(at 152.4 105.41 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "d01657df-eb34-4891-8159-c3e0eefb233d")
+			)
+			(table_cell "C34499"
+				(exclude_from_sim no)
+				(at 243.84 105.41 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C34499.html")
+				)
+				(uuid "b5923565-9f62-4477-861e-2e5e6ab8fceb")
+			)
+			(table_cell "KT-0805W (LCSC)"
+				(exclude_from_sim no)
+				(at 264.16 105.41 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/datasheet/C34499.pdf")
+				)
+				(uuid "85b0a0b5-65d6-4d4d-ae70-5e313e0f82cb")
+			)
+			(table_cell "LED4"
+				(exclude_from_sim no)
+				(at 22.86 109.22 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "61546dbf-9656-4e8b-aad7-41a04148618f")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 60.96 109.22 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "6d3e1814-df36-49e1-bb22-901b6e90c9ab")
+			)
+			(table_cell "KT-0805Y"
+				(exclude_from_sim no)
+				(at 69.85 109.22 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "ab16eaaa-cc90-4761-97c1-9e1007d6fcde")
+			)
+			(table_cell "Hubei KENTO"
+				(exclude_from_sim no)
+				(at 114.3 109.22 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "615ea126-299a-4b4e-9c9d-7b6e3da9fb99")
+			)
+			(table_cell "LED yellow · 0805"
+				(exclude_from_sim no)
+				(at 152.4 109.22 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "f4b36045-390c-4381-b01f-7bf8f79af46e")
+			)
+			(table_cell "C2296"
+				(exclude_from_sim no)
+				(at 243.84 109.22 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C2296.html")
+				)
+				(uuid "c7e42bb2-4ae8-4e2d-b6c4-164c70d06452")
+			)
+			(table_cell "KT-0805Y (LCSC)"
+				(exclude_from_sim no)
+				(at 264.16 109.22 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/datasheet/C2296.pdf")
+				)
+				(uuid "03162879-4a8f-4bf7-8983-0c96d494f935")
+			)
+			(table_cell "C1, C2, C5"
+				(exclude_from_sim no)
+				(at 22.86 113.03 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "610e8d0c-4b94-4eb3-9af6-246bdaf458bd")
+			)
+			(table_cell "3"
+				(exclude_from_sim no)
+				(at 60.96 113.03 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "05d11a40-e839-441b-88b0-30823a29aa85")
+			)
+			(table_cell "CL21A106KAYNNNE"
+				(exclude_from_sim no)
+				(at 69.85 113.03 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "6761e9d1-676e-4a84-80ad-03033fd939c1")
+			)
+			(table_cell "Samsung"
+				(exclude_from_sim no)
+				(at 114.3 113.03 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "315b45a9-330f-41f0-8fc4-f059fd6e1830")
+			)
+			(table_cell "MLCC 10 µF 25 V X5R · 0805"
+				(exclude_from_sim no)
+				(at 152.4 113.03 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "91eb5400-ced3-424b-b7e7-eab8c50de826")
+			)
+			(table_cell "C15850"
+				(exclude_from_sim no)
+				(at 243.84 113.03 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C15850.html")
+				)
+				(uuid "f9f57ce8-2c7c-4272-96e7-d121e9482999")
+			)
+			(table_cell "CL21A106KAYNNNE (LCSC)"
+				(exclude_from_sim no)
+				(at 264.16 113.03 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/datasheet/C15850.pdf")
+				)
+				(uuid "1593ca4f-7991-4f68-804e-ebf2abf6ad1d")
+			)
+			(table_cell "C3, C4, C6, C7, C8, C9, C10"
+				(exclude_from_sim no)
+				(at 22.86 116.84 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "0bbf61ee-9dae-448c-b4a5-bc22b67b3630")
+			)
+			(table_cell "7"
+				(exclude_from_sim no)
+				(at 60.96 116.84 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "63321031-fd26-489f-839a-00ccc7c59421")
+			)
+			(table_cell "CL05B104KO5NNNC"
+				(exclude_from_sim no)
+				(at 69.85 116.84 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "af5c6fc3-79f8-4216-9678-4763caba50ea")
+			)
+			(table_cell "Samsung"
+				(exclude_from_sim no)
+				(at 114.3 116.84 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "bbe3dad7-90e9-485e-94e1-06026fb5c79e")
+			)
+			(table_cell "MLCC 100 nF 16 V X7R · 0402"
+				(exclude_from_sim no)
+				(at 152.4 116.84 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "23ea702d-77e6-45fb-aea7-148240f16574")
+			)
+			(table_cell "C1525"
+				(exclude_from_sim no)
+				(at 243.84 116.84 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C1525.html")
+				)
+				(uuid "c5e8abb5-b9fd-47c6-a78d-8c2f6fedbd8b")
+			)
+			(table_cell "CL05B104KO5NNNC (LCSC)"
+				(exclude_from_sim no)
+				(at 264.16 116.84 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/datasheet/C1525.pdf")
+				)
+				(uuid "2470e7ce-258c-45d7-abbe-5d3aaaf50c0f")
+			)
+			(table_cell "R1, R2, R3, R4"
+				(exclude_from_sim no)
+				(at 22.86 120.65 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "bf5ffeee-95e7-4590-8162-0b61e2e4b3d3")
+			)
+			(table_cell "4"
+				(exclude_from_sim no)
+				(at 60.96 120.65 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "02ac518a-7c98-425a-b3d7-915ab6aea41c")
+			)
+			(table_cell "0402WGF1001TCE"
+				(exclude_from_sim no)
+				(at 69.85 120.65 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "66165f45-0422-42ae-865e-e0b2231337c4")
+			)
+			(table_cell "UNI-ROYAL"
+				(exclude_from_sim no)
+				(at 114.3 120.65 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "59fdaee6-50b1-43a2-ad5b-1aae56270046")
+			)
+			(table_cell "Resistor 1 kΩ 1 % 62.5 mW · 0402"
+				(exclude_from_sim no)
+				(at 152.4 120.65 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "b33e0fb6-9c12-420e-b1a0-80ec53af40bf")
+			)
+			(table_cell "C11702"
+				(exclude_from_sim no)
+				(at 243.84 120.65 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C11702.html")
+				)
+				(uuid "f8d38278-3a90-4dff-8fd3-1eb635d5d3fa")
+			)
+			(table_cell "0402WGF1001TCE (LCSC)"
+				(exclude_from_sim no)
+				(at 264.16 120.65 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/datasheet/C11702.pdf")
+				)
+				(uuid "c7864287-180c-4a20-b314-49595b46d3de")
+			)
+			(table_cell "R5, R6, R9, R13, R15"
+				(exclude_from_sim no)
+				(at 22.86 124.46 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "2a8ed50d-7b0e-40a6-86e3-40bd48cfae04")
+			)
+			(table_cell "5"
+				(exclude_from_sim no)
+				(at 60.96 124.46 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "b533e44b-c55f-49c9-8920-a6b79a3f044b")
+			)
+			(table_cell "0402WGF1002TCE"
+				(exclude_from_sim no)
+				(at 69.85 124.46 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "4ef802c1-b36e-4247-9eca-be0f1f2f4afd")
+			)
+			(table_cell "UNI-ROYAL"
+				(exclude_from_sim no)
+				(at 114.3 124.46 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "f8ae3ae8-3033-406a-ac03-9cccf26f3867")
+			)
+			(table_cell "Resistor 10 kΩ 1 % 62.5 mW · 0402"
+				(exclude_from_sim no)
+				(at 152.4 124.46 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "85d778c4-1524-4a69-9f7e-fed17c9ff894")
+			)
+			(table_cell "C25744"
+				(exclude_from_sim no)
+				(at 243.84 124.46 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C25744.html")
+				)
+				(uuid "c97d826c-cc34-489d-9ceb-9fcee8fa4898")
+			)
+			(table_cell "0402WGF1002TCE (LCSC)"
+				(exclude_from_sim no)
+				(at 264.16 124.46 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/datasheet/C25744.pdf")
+				)
+				(uuid "6468d805-f1c0-448a-9729-a55b5f1e6061")
+			)
+			(table_cell "R7"
+				(exclude_from_sim no)
+				(at 22.86 128.27 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "1e43b845-70d3-4ec0-a822-1cca6114a5e5")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 60.96 128.27 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "d871fb56-e6b9-4a5d-a69b-a025fa7e48f3")
+			)
+			(table_cell "0603WAF1200T5E"
+				(exclude_from_sim no)
+				(at 69.85 128.27 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "8279a4ed-2d89-4e96-80a9-9877e4a71326")
+			)
+			(table_cell "UNI-ROYAL"
+				(exclude_from_sim no)
+				(at 114.3 128.27 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "3c3ff961-e1ff-4c08-9833-da0626982d68")
+			)
+			(table_cell "Resistor 120 Ω 1 % 100 mW · 0603 (CAN termination)"
+				(exclude_from_sim no)
+				(at 152.4 128.27 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "d27bbf81-b9da-4015-8b5f-2ec20c1ba4dc")
+			)
+			(table_cell "C22787"
+				(exclude_from_sim no)
+				(at 243.84 128.27 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C22787.html")
+				)
+				(uuid "cba34f30-89db-4db7-ad06-9224d6b1a9ee")
+			)
+			(table_cell "0603WAF1200T5E (LCSC)"
+				(exclude_from_sim no)
+				(at 264.16 128.27 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/datasheet/C22787.pdf")
+				)
+				(uuid "51106af1-87b8-427f-93b7-870d2b8e471a")
+			)
+			(table_cell "R8"
+				(exclude_from_sim no)
+				(at 22.86 132.08 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "6e4dd961-2f32-4078-83de-7e875d871d67")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 60.96 132.08 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "49140415-b7cc-42d1-adfe-76361508105f")
+			)
+			(table_cell "0402WGF2002TCE"
+				(exclude_from_sim no)
+				(at 69.85 132.08 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "621f45b8-16e6-40a5-bcae-41117fb26223")
+			)
+			(table_cell "UNI-ROYAL"
+				(exclude_from_sim no)
+				(at 114.3 132.08 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "17361738-d647-43b7-ba6c-3bdfbf97cfe7")
+			)
+			(table_cell "Resistor 20 kΩ 1 % 62.5 mW · 0402"
+				(exclude_from_sim no)
+				(at 152.4 132.08 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "fb7422af-5baa-4b6d-b3a2-2920dae054ea")
+			)
+			(table_cell "C25765"
+				(exclude_from_sim no)
+				(at 243.84 132.08 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C25765.html")
+				)
+				(uuid "578245f1-4bfc-40a6-aa17-8aede480392d")
+			)
+			(table_cell "0402WGF2002TCE (LCSC)"
+				(exclude_from_sim no)
+				(at 264.16 132.08 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/datasheet/C25765.pdf")
+				)
+				(uuid "7426673c-c978-4b35-9979-9e57b8bc4754")
+			)
+			(table_cell "R12"
+				(exclude_from_sim no)
+				(at 22.86 135.89 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "82bd8a7b-beab-4489-8161-04c4bb564238")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 60.96 135.89 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "797e2234-642e-44c2-a058-d70565823c23")
+			)
+			(table_cell "0402WGF4701TCE"
+				(exclude_from_sim no)
+				(at 69.85 135.89 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "9dbab1e2-f21f-42fc-86fe-91579760c461")
+			)
+			(table_cell "UNI-ROYAL"
+				(exclude_from_sim no)
+				(at 114.3 135.89 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "cf219b08-d5a8-452a-bac6-e94f718048cd")
+			)
+			(table_cell "Resistor 4.7 kΩ 1 % 62.5 mW · 0402"
+				(exclude_from_sim no)
+				(at 152.4 135.89 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "83c8fc54-e3c3-4506-8829-df80305ad38e")
+			)
+			(table_cell "C25900"
+				(exclude_from_sim no)
+				(at 243.84 135.89 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C25900.html")
+				)
+				(uuid "b56c6478-6d11-46a0-b286-8e9bc9f62ba7")
+			)
+			(table_cell "0402WGF4701TCE (LCSC)"
+				(exclude_from_sim no)
+				(at 264.16 135.89 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/datasheet/C25900.pdf")
+				)
+				(uuid "32effe43-e3b5-46bb-92b5-a96d2ef44ac1")
+			)
+			(table_cell "R14"
+				(exclude_from_sim no)
+				(at 22.86 139.7 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "bb49944a-ea4f-4e9f-a932-c022f1e2eed4")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 60.96 139.7 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "b2cb75e5-57d4-4af5-93d9-017f9c39483e")
+			)
+			(table_cell "0402WGF220JTCE"
+				(exclude_from_sim no)
+				(at 69.85 139.7 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "fed662ee-14d8-43bc-981c-1b75cc48c0f8")
+			)
+			(table_cell "UNI-ROYAL"
+				(exclude_from_sim no)
+				(at 114.3 139.7 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "4700e288-f96a-4ac1-85e2-80f138a645ba")
+			)
+			(table_cell "Resistor 22 Ω 1 % 62.5 mW · 0402 (HSE series)"
+				(exclude_from_sim no)
+				(at 152.4 139.7 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "8a2604c5-23cd-47a7-988e-0492b3371eb0")
+			)
+			(table_cell "C25092"
+				(exclude_from_sim no)
+				(at 243.84 139.7 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C25092.html")
+				)
+				(uuid "4b3245ef-7693-4ad5-b7d6-ebe3ff97769b")
+			)
+			(table_cell "0402WGF220JTCE (LCSC)"
+				(exclude_from_sim no)
+				(at 264.16 139.7 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/datasheet/C25092.pdf")
+				)
+				(uuid "ece018b5-c0bc-4410-8af6-8235241988ce")
+			)
+			(table_cell "R16"
+				(exclude_from_sim no)
+				(at 22.86 143.51 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "0dcf367e-4baf-4406-8df4-7c4e08cae500")
+			)
+			(table_cell "1"
+				(exclude_from_sim no)
+				(at 60.96 143.51 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "200d569e-fccf-4585-85ca-bb5c3361184f")
+			)
+			(table_cell "0402WGF0000TCE"
+				(exclude_from_sim no)
+				(at 69.85 143.51 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "ae6d876e-ac0a-4234-a0c3-75e9ea7e53d1")
+			)
+			(table_cell "UNI-ROYAL"
+				(exclude_from_sim no)
+				(at 114.3 143.51 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "3d938b70-d6a4-4621-8d47-e3fc0d1800d1")
+			)
+			(table_cell "Resistor 0 Ω · 0402 (U3 Rs link)"
+				(exclude_from_sim no)
+				(at 152.4 143.51 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "9b8f7355-5cbb-4d2f-b299-5f4e8da6a16d")
+			)
+			(table_cell "C17168"
+				(exclude_from_sim no)
+				(at 243.84 143.51 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C17168.html")
+				)
+				(uuid "33d791e2-21c1-403a-a5a1-d7d719f527d4")
+			)
+			(table_cell "0402WGF0000TCE (LCSC)"
+				(exclude_from_sim no)
+				(at 264.16 143.51 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/datasheet/C17168.pdf")
+				)
+				(uuid "8e06aed1-0395-41b2-9c30-9935a458f5ef")
+			)
+			(table_cell "J1"
+				(exclude_from_sim no)
+				(at 22.86 147.32 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "9bc28e4c-3bcb-473d-98c3-175ec847bb9e")
+			)
+			(table_cell "–"
+				(exclude_from_sim no)
+				(at 60.96 147.32 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "a81ccc84-ab5e-4627-91fe-be64c2e54f2e")
+			)
+			(table_cell "M.2 2242 B-key card edge"
+				(exclude_from_sim no)
+				(at 69.85 147.32 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "2b3b413c-0be5-48b9-baf5-0c39db95a299")
+			)
+			(table_cell "(PCB gold fingers)"
+				(exclude_from_sim no)
+				(at 114.3 147.32 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "299f533f-fb12-47ca-99df-ea8a079475d9")
+			)
+			(table_cell "Not assembled: PCB feature. Carrier uses an M.2 B-key socket, e.g. LCSC C590859"
+				(exclude_from_sim no)
+				(at 152.4 147.32 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "51989291-c26e-453e-bac1-778095d4128a")
+			)
+			(table_cell "–"
+				(exclude_from_sim no)
+				(at 243.84 147.32 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "47bb0edc-8ab0-4dca-86eb-e51a0ae134c8")
+			)
+			(table_cell "socket (LCSC)"
+				(exclude_from_sim no)
+				(at 264.16 147.32 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 194 1)
+					)
+					(justify left top)
+					(href "https://www.lcsc.com/product-detail/C590859.html")
+				)
+				(uuid "0cc18aef-098b-4f4c-9963-40439c4f4c02")
+			)
+			(table_cell "JP1, TP1–TP3"
+				(exclude_from_sim no)
+				(at 22.86 151.13 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "dbda119a-fcf9-4be9-b74f-403314299ee3")
+			)
+			(table_cell "–"
+				(exclude_from_sim no)
+				(at 60.96 151.13 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "8fa4b65c-520c-48aa-9bc8-04f683c273ce")
+			)
+			(table_cell "PCB features"
+				(exclude_from_sim no)
+				(at 69.85 151.13 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "f155b834-1ae4-45ba-b7b7-e0b625099ce1")
+			)
+			(table_cell "–"
+				(exclude_from_sim no)
+				(at 114.3 151.13 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "a9262d7b-fdb9-4d82-8a77-70915d8031bc")
+			)
+			(table_cell "Not assembled: solder jumper (CAN termination) and test pads"
+				(exclude_from_sim no)
+				(at 152.4 151.13 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "ff30dd25-f58d-48d0-bdda-4f3520bcc15a")
+			)
+			(table_cell "–"
+				(exclude_from_sim no)
+				(at 243.84 151.13 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "8c3cb542-d4e4-4fc5-933c-feb5a64c0adb")
+			)
+			(table_cell "–"
+				(exclude_from_sim no)
+				(at 264.16 151.13 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "078fbb30-e016-4202-9a01-46f3a633528f")
+			)
+			(table_cell "MES4-CIF"
+				(exclude_from_sim no)
+				(at 22.86 154.94 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "27128de9-57c5-4431-8c0d-7491529a9254")
+			)
+			(table_cell "–"
+				(exclude_from_sim no)
+				(at 60.96 154.94 0)
+				(size 8.89 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "a5438052-6597-40de-af78-b90c55126b98")
+			)
+			(table_cell "CARRIER_INTERFACE.md"
+				(exclude_from_sim no)
+				(at 69.85 154.94 0)
+				(size 44.45 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "1e8747a3-8151-4357-a8a5-64357d5f2f9c")
+			)
+			(table_cell "Monkey Robotics"
+				(exclude_from_sim no)
+				(at 114.3 154.94 0)
+				(size 38.1 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "a7222f0a-3686-4c0f-b125-d1c8b3d2736a")
+			)
+			(table_cell "Carrier interface spec, rev A-d6 (rules also on sheet 4); file in the project folder"
+				(exclude_from_sim no)
+				(at 152.4 154.94 0)
+				(size 91.44 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "bddd4928-3e74-4556-a070-cc23b9b1401b")
+			)
+			(table_cell "–"
+				(exclude_from_sim no)
+				(at 243.84 154.94 0)
+				(size 20.32 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "126e8036-7d57-4fa6-8b4e-5558fbca9a45")
+			)
+			(table_cell "–"
+				(exclude_from_sim no)
+				(at 264.16 154.94 0)
+				(size 50.8 3.81)
+				(margins 0.9525 0.9525 0.9525 0.9525)
+				(span 1 1)
+				(fill
+					(type none)
+				)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(color 0 0 0 1)
+					)
+					(justify left top)
+				)
+				(uuid "9a57f439-92c7-4829-ae3d-c19dbedfb151")
+			)
+		)
+	)
+)

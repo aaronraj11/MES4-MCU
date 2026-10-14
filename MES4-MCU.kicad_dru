@@ -1,0 +1,256 @@
+(version 1)
+# =====================================================================================================
+# JLCPCB capabilities used for this board (jlcpcb.com/capabilities/pcb-capabilities, read 2026-10-14)
+# 4-layer, 0.8 mm, 1 oz outer, ENIG. Board Setup minimums = JLC limits; the rules below stay above them.
+#   Track / space (multilayer, 1 oz) ........ 0.09 / 0.09 mm   (rules here: >= 0.127 outer, CAN pair 0.09-0.12)
+#   Via hole / diameter ..................... min 0.15 / 0.25 mm; NO surcharge only with hole >= 0.2 mm AND
+#                                             diameter >= 0.45 mm  -> standard via here 0.45 / 0.2 (power 0.6 / 0.3)
+#   Via diameter - hole ..................... >= 0.1 mm (0.15 preferred)
+#   Via hole-to-hole 0.2 mm, pad hole-to-hole 0.45 mm, via hole to track 0.2 mm, inner via hole to copper 0.2 mm
+#   SMD pad to pad (different nets) ......... 0.15 mm      Pad to track ........... 0.1 mm
+#   Solder-mask bridge (green) .............. 0.10 mm      Min SMD pad ............ 0.25 x 0.25 mm
+#   Copper to routed edge ................... 0.2 mm       (rules here: 0.5 mm, J1 half-moon GND pads 0.3 mm)
+#   Silkscreen: text >= 1.0 mm high, >= 0.15 mm line; pad-to-silk 0.15 mm (closer silk is clipped by JLC)
+#   Via-in-pad (epoxy filled & capped) is an extra-cost option on 4-layer -> no vias inside pads on this board
+#   Thickness tolerance (< 1.0 mm boards) ... +-0.1 mm  (M.2 spec wants 0.8 +-0.08: measure first articles)
+# =====================================================================================================
+# Custom Design Rules (DRC) for KiCAD 7.0 (Stored in '<project>.kicad_dru' file).
+#
+# Matching JLCPCB capabilities: https://jlcpcb.com/capabilities/pcb-capabilities
+#
+# KiCad documentation: https://docs.kicad.org/master/id/pcbnew/pcbnew_advanced.html#custom_design_rules
+#
+# Inspiration
+# - https://gist.github.com/darkxst/f713268e5469645425eed40115fb8b49 (with comments)
+# - https://gist.github.com/denniskupec/e163d13b0a64c2044bd259f64659485e (with comments)
+
+# TODO new rule: NPTH pads.
+# Inner diameter of pad should be 0.4-0.5 mm larger than NPTH drill diameter.
+# JLCPCB: "We make NPTH via dry sealing film process, if customer would like a NPTH but around with pad/copper, our engineer will dig out around pad/copper about 0.2mm-0.25mm, otherwise the metal potion will be flowed into the hole and it becomes a PTH. (there will be no copper dig out optimization for single board)."
+
+# TODO: new rule for plated slots: min diameter/width 0.5mm
+# JLCPCB: "The minimum plated slot width is 0.5mm, which is drawn with a pad."
+
+# TODO new rule: non-plated slots: min diameter/width 1.0mm
+# JLCPCB: "The minimum Non-Plated Slot Width is 1.0mm, please draw the slot outline in the mechanical layer(GML or GKO)""
+
+(rule "Track width, outer layer (1oz copper)"
+	(layer outer)
+	(condition "A.Type == 'track'")
+	(constraint track_width (min 0.127mm))
+)
+
+(rule "Track spacing, outer layer (1oz copper)"
+	(layer outer)
+	(condition "A.Type == 'track' && B.Type == A.Type")
+	(constraint clearance (min 0.127mm))
+)
+
+(rule "Track width, inner layer"
+	(layer inner)
+	(condition "A.Type == 'track'")
+	(constraint track_width (min 0.09mm))
+)
+
+(rule "Track spacing, inner layer"
+	(layer inner)
+	(condition "A.Type == 'track' && B.Type == A.Type")
+	(constraint clearance (min 0.09mm))
+)
+
+(rule "Silkscreen text"
+	(layer "?.Silkscreen")
+	(condition "A.Type == 'Text' || A.Type == 'Text Box'")
+	(constraint text_thickness (min 0.15mm))
+	(constraint text_height (min 1mm))
+)
+
+(rule "Pad to Silkscreen"
+	(layer outer)
+	(condition "A.Type == 'pad' && B.Layer == '?.Silkscreen'")
+	# KiCad stock footprints keep silk 0.10 mm off pads; JLC asks 0.15 mm and clips closer silk (cosmetic only)
+	(constraint silk_clearance (min 0.09mm))
+)
+
+(rule "Edge (routed) to track clearance"
+	(condition "A.Type == 'track'")
+	(constraint edge_clearance (min 0.3mm))
+)
+
+#(rule "Edge (v-cut) to track clearance"
+#	(condition "A.Type == 'track'")
+#	(constraint edge_clearance (min 0.4mm))
+#)
+
+# JLCPCB restrictions ambiguous:
+# Illustration: 0.2 mm, 1&2 layer: 0.3 mm, multilayer: "(0.15mm more costly)"
+# This rule handles diameter minimum and maximum for ALL holes.
+# Other specialized rules handle restrictions (e.g. Via, PTH, NPTH) 
+(rule "Hole diameter"
+	(constraint hole_size (min 0.2mm) (max 6.3mm))
+)
+
+(rule "Hole (NPTH) diameter"
+	(layer outer)
+	(condition "!A.isPlated()")
+	(constraint hole_size (min 0.5mm))
+)
+
+# TODO: Hole to board edge ≥ 1 mm. Min. board size 10 × 10 mm
+(rule "Hole (castellated) diameter"
+	(layer outer)
+	(condition "A.Type == 'pad' && A.Fabrication_Property == 'Castellated pad'")
+	(constraint hole_size (min 0.6mm))
+)
+
+# JLCPCB: "Via diameter should be 0.1mm(0.15mm preferred) larger than Via hole size" (illustration shows diameters for both dimensions)
+# JLCPCB: PTH: "The annular ring size will be enlarged to 0.15mm in production."
+(rule "Annular ring width (via and PTH)"
+	(layer outer)
+	(condition "A.isPlated()")
+	(constraint annular_width (min 0.075mm))
+)
+
+(rule "Clearance: hole to hole (perimeter), different nets"
+	(layer outer)
+	(condition "A.Net != B.Net")
+	(constraint hole_to_hole (min 0.5mm))
+)
+
+(rule "Clearance: hole to hole (perimeter), same net"
+	(layer outer)
+	(condition "A.Net == B.Net")
+	(constraint hole_to_hole (min 0.254mm))
+)
+
+(rule "Clearance: track to NPTH hole (perimeter)"
+#	(condition "A.Pad_Type == 'NPTH, mechanical' && B.Type == 'track' && A.Net != B.Net")
+	(condition "!A.isPlated() && B.Type == 'track' && A.Net != B.Net")
+	(constraint hole_clearance (min 0.254mm))
+)
+
+(rule "Clearance: track to PTH hole perimeter (JLC via hole to track 0.2 mm; 0.25 kept here)"
+	(condition "A.isPlated() && B.Type == 'track' && A.Net != B.Net")
+	(constraint hole_clearance (min 0.25mm))
+)
+
+# TODO: try combining with rule "Clearance: PTH to track, different nets"
+(rule "Clearance: track to pad"
+	(condition "A.Type == 'pad' && B.Type == 'track' &&  A.Net != B.Net")
+	(constraint clearance (min 0.2mm))
+)
+
+(rule "Clearance: pad/via to pad/via"
+	(layer outer)
+#	(condition "(A.Type == 'Pad' || A.Type == 'Via') && (B.Type == 'Pad' || B.Type == 'Via') && A.Net != B.Net")	
+	(condition "A.isPlated() && B.isPlated() && A.Net != B.Net")
+	(constraint clearance (min 0.15mm))
+)
+
+
+# ---------------------------------------------------------------------------
+# MES4-MCU signal-integrity rules — 4-layer JLC04081H-3313 (0.8 mm):
+#   F.Cu / prepreg 0.0994 mm er 4.1 / In1 GND / core 0.45 mm / In2 +3V3 / prepreg / B.Cu
+# Microstrip over In1 GND (Hammerstad-Jensen):
+#   USB  0.15 / 0.13 mm pair  ≈ 90 Ω diff   (USB FS 90 Ω ±15 %)
+#   CAN  0.10 / 0.25 mm pair  ≈ 118 Ω diff  (CAN bus 120 Ω)
+# Verify with JLCPCB's impedance calculator before ordering.
+# ---------------------------------------------------------------------------
+# USB: U3 and D2 sit between pins 22/23 and fingers 23/25, so each line drops to B.Cu under U1 and comes back up
+# above the fingers (2 vias each; harmless at 12 Mbit/s)
+(rule "USB FS differential pair"
+	(condition "A.NetClass == 'USB'")
+	(constraint diff_pair_gap (min 0.11mm) (opt 0.13mm) (max 0.16mm))
+	(constraint diff_pair_uncoupled (max 5mm))
+	(constraint skew (max 1mm))
+	(constraint via_count (max 2))
+	(constraint length (max 30mm))
+)
+
+# CAN: no length-matching rule. CANH/CANL each carry TVS and termination branches, so whole-net length
+# differences say nothing about the bus pair, and at <= 1 Mbit/s a few mm of mismatch is irrelevant.
+(rule "CAN differential pair"
+	(condition "A.NetName == '/CAN_M2/CANH' || A.NetName == '/CAN_M2/CANL'")
+	(constraint diff_pair_gap (min 0.2mm) (opt 0.25mm) (max 0.3mm))
+	(constraint diff_pair_uncoupled (max 4mm))
+)
+
+(rule "HSE clock: short, no vias"
+	(condition "A.NetClass == 'Clock'")
+	(constraint length (max 8mm))
+	(constraint via_count (max 0))
+)
+
+(rule "HSE clock: extra spacing to other nets"
+	(condition "(A.NetClass == 'Clock' || B.NetClass == 'Clock') && A.Net != B.Net")
+	(constraint clearance (min 0.3mm))
+)
+
+(rule "USB pair: width fixed for 90 ohm (outer layers, microstrip over In1/In2 plane)"
+	(layer outer)
+	(condition "A.NetClass == 'USB' && A.Type == 'track'")
+	(constraint track_width (min 0.14mm) (opt 0.15mm) (max 0.16mm))
+)
+
+# The pair has to split to the 0.5 mm finger pitch inside the finger area
+(rule "USB pair at the M.2 fingers"
+	(condition "A.NetClass == 'USB' && A.intersectsArea('M.2 finger area: no pour/vias')")
+	(constraint diff_pair_gap (min 0.11mm) (max 0.4mm))
+)
+
+(rule "CAN pair: width fixed for ~118 ohm (outer layers)"
+	(layer outer)
+	(condition "A.NetClass == 'CAN' && A.Type == 'track'")
+	(constraint track_width (min 0.09mm) (opt 0.1mm) (max 0.12mm))
+)
+
+# Crosstalk: keep other nets >= 2x the pair gap away from the USB and CAN pairs
+(rule "USB pair: keep-away from other nets"
+	(condition "A.NetClass == 'USB' && B.NetClass != 'USB' && A.Type == 'track' && B.Type == 'track'")
+	(constraint clearance (min 0.3mm))
+)
+
+(rule "CAN pair: keep-away from other nets"
+	(condition "A.NetClass == 'CAN' && B.NetClass != 'CAN' && A.Type == 'track' && B.Type == 'track'")
+	(constraint clearance (min 0.3mm))
+)
+
+(rule "Power tracks at least 0.3 mm"
+	(condition "A.NetClass == 'Power' && A.Type == 'track'")
+	(constraint track_width (min 0.3mm) (opt 0.4mm))
+)
+
+(rule "SMD pad to pad, different nets (JLC 0.15 mm)"
+	(condition "A.Type == 'Pad' && B.Type == 'Pad' && A.Net != B.Net")
+	(constraint clearance (min 0.15mm))
+)
+
+(rule "M.2 gold fingers: 0.5 mm pitch is fixed by the spec"
+	(condition "A.memberOfFootprint('J1') && B.memberOfFootprint('J1')")
+	(constraint clearance (min 0.12mm))
+)
+
+(rule "Copper to board edge 0.5 mm"
+	(constraint edge_clearance (min 0.5mm))
+)
+
+(rule "Tracks into the M.2 fingers next to the key slot: 0.3 mm to the edge (JLC routed edge 0.2 mm)"
+	(condition "A.Type == 'track' && A.intersectsArea('M.2 finger area: no pour/vias')")
+	(constraint edge_clearance (min 0.3mm))
+)
+
+(rule "J1 half-moon GND pads: 0.3 mm to the routed notch (M.2 spec mechanical GND pad)"
+	(condition "A.memberOfFootprint('J1') && A.Type == 'Pad'")
+	(constraint edge_clearance (min 0.25mm))
+)
+
+(rule "Vias: JLC no-surcharge size (hole >= 0.2 mm, diameter >= 0.45 mm)"
+	(condition "A.Type == 'Via'")
+	(constraint hole_size (min 0.2mm))
+	(constraint via_diameter (min 0.45mm))
+)
+
+(rule "No vias inside pads (via-in-pad needs JLC's extra-cost filled & capped process)"
+	(condition "A.Type == 'Via' && B.Type == 'Pad' && A.Net == B.Net")
+	(constraint hole_clearance (min 0.1mm))
+)

@@ -1,0 +1,1216 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "ca929d81-ff24-4233-a1d6-c766cde424b1")
+	(paper "A3")
+	(title_block
+		(title "MES4-MCU – Overview")
+		(date "2026-10-14")
+		(rev "A-d6")
+		(company "Monkey Robotics")
+		(comment 1 "Designer: Aaron")
+		(comment 2 "MES4-MCU · STM32G0B1 M.2 2242 CAN module · 4-layer 0.8 mm JLC04081H-3313")
+	)
+	(lib_symbols)
+	(polyline
+		(pts
+			(xy 232.41 190.5) (xy 231.69 188.9) (xy 233.13 188.9) (xy 232.41 190.5)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 110 55 170 1)
+		)
+		(fill
+			(type color)
+			(color 110 55 170 1)
+		)
+		(uuid 00544906-164e-4485-ad79-35b3aec1805d)
+	)
+	(polyline
+		(pts
+			(xy 121.92 120.65) (xy 120.32 121.37) (xy 120.32 119.93) (xy 121.92 120.65)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 110 55 170 1)
+		)
+		(fill
+			(type color)
+			(color 110 55 170 1)
+		)
+		(uuid 03cb2da9-e638-4051-a7da-1e140b3313c2)
+	)
+	(polyline
+		(pts
+			(xy 139.7 127) (xy 139.7 137.16) (xy 67.31 137.16) (xy 67.31 147.32)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 165 125 0 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 06fe5394-938e-4708-b182-97e889f45389)
+	)
+	(polyline
+		(pts
+			(xy 67.31 147.32) (xy 66.59 145.72) (xy 68.03 145.72) (xy 67.31 147.32)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 165 125 0 1)
+		)
+		(fill
+			(type color)
+			(color 165 125 0 1)
+		)
+		(uuid 097122ac-2f4f-417d-970b-aa4561c6c23b)
+	)
+	(rectangle
+		(start 33.02 101.6)
+		(end 101.6 124.46)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 205 110 0 1)
+		)
+		(fill
+			(type color)
+			(color 255 236 212 1)
+		)
+		(uuid 0a511dfb-e0bb-4133-8fb0-e9704dff10d4)
+	)
+	(polyline
+		(pts
+			(xy 210.82 113.03) (xy 209.22 113.75) (xy 209.22 112.31) (xy 210.82 113.03)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 25 130 50 1)
+		)
+		(fill
+			(type color)
+			(color 25 130 50 1)
+		)
+		(uuid 2bf56c8c-a88a-4892-817a-0f9684834494)
+	)
+	(rectangle
+		(start 210.82 147.32)
+		(end 279.4 165.1)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 25 130 50 1)
+		)
+		(fill
+			(type color)
+			(color 222 245 224 1)
+		)
+		(uuid 2eeda898-0d8d-45be-84c9-2d78c19f8bb4)
+	)
+	(polyline
+		(pts
+			(xy 121.92 113.03) (xy 120.32 113.75) (xy 120.32 112.31) (xy 121.92 113.03)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 205 110 0 1)
+		)
+		(fill
+			(type color)
+			(color 205 110 0 1)
+		)
+		(uuid 40a030b6-3da1-48cc-bfc0-705766d414bb)
+	)
+	(polyline
+		(pts
+			(xy 190.5 113.03) (xy 192.1 112.31) (xy 192.1 113.75) (xy 190.5 113.03)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 25 130 50 1)
+		)
+		(fill
+			(type color)
+			(color 25 130 50 1)
+		)
+		(uuid 414ac424-7501-4b01-9c04-e01ae8e2afdf)
+	)
+	(polyline
+		(pts
+			(xy 245.11 76.2) (xy 245.11 87.63) (xy 172.72 87.63) (xy 172.72 99.06)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 190 30 30 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 43610b17-95dc-42db-b241-8a5dc2fd8603)
+	)
+	(rectangle
+		(start 64.77 219.71)
+		(end 69.85 222.758)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 30 70 180 1)
+		)
+		(fill
+			(type color)
+			(color 222 233 255 1)
+		)
+		(uuid 449776e8-a266-409e-b0b4-5d2d96e8a4ca)
+	)
+	(rectangle
+		(start 27.94 219.71)
+		(end 33.02 222.758)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 190 30 30 1)
+		)
+		(fill
+			(type color)
+			(color 255 226 226 1)
+		)
+		(uuid 46e47dbf-fdf6-472e-b432-771d44c8884a)
+	)
+	(rectangle
+		(start 212.09 219.71)
+		(end 217.17 222.758)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 110 55 170 1)
+		)
+		(fill
+			(type color)
+			(color 238 228 255 1)
+		)
+		(uuid 58b9800e-7b78-4ee6-af4e-ab9d2eb93ead)
+	)
+	(rectangle
+		(start 248.92 219.71)
+		(end 254 222.758)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 90 90 90 1)
+		)
+		(fill
+			(type color)
+			(color 236 236 236 1)
+		)
+		(uuid 59c5c5e5-8df8-4c3d-89a9-e1dd4c59a8fc)
+	)
+	(rectangle
+		(start 101.6 219.71)
+		(end 106.68 222.758)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 205 110 0 1)
+		)
+		(fill
+			(type color)
+			(color 255 236 212 1)
+		)
+		(uuid 60926b60-6965-43c3-8788-d9beb6ac5a14)
+	)
+	(polyline
+		(pts
+			(xy 245.11 147.32) (xy 244.39 145.72) (xy 245.83 145.72) (xy 245.11 147.32)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 25 130 50 1)
+		)
+		(fill
+			(type color)
+			(color 25 130 50 1)
+		)
+		(uuid 73e16af8-89b1-408b-9ced-93431af94504)
+	)
+	(rectangle
+		(start 210.82 101.6)
+		(end 279.4 124.46)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 25 130 50 1)
+		)
+		(fill
+			(type color)
+			(color 222 245 224 1)
+		)
+		(uuid 77efaab0-a57d-4bc8-ad5d-3a9fb2cb848f)
+	)
+	(rectangle
+		(start 22.86 43.18)
+		(end 287.02 234.95)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 7c410c9f-42da-4bad-859d-75d9addbcce0)
+	)
+	(polyline
+		(pts
+			(xy 210.82 67.31) (xy 209.22 68.03) (xy 209.22 66.59) (xy 210.82 67.31)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 190 30 30 1)
+		)
+		(fill
+			(type color)
+			(color 190 30 30 1)
+		)
+		(uuid 8277ca82-71f5-4312-8572-02942e5be25c)
+	)
+	(polyline
+		(pts
+			(xy 172.72 99.06) (xy 172 97.46) (xy 173.44 97.46) (xy 172.72 99.06)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 190 30 30 1)
+		)
+		(fill
+			(type color)
+			(color 190 30 30 1)
+		)
+		(uuid 87c52192-bebb-4793-a5e6-22798faa2331)
+	)
+	(rectangle
+		(start 121.92 147.32)
+		(end 190.5 165.1)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 165 125 0 1)
+		)
+		(fill
+			(type color)
+			(color 255 248 204 1)
+		)
+		(uuid 8de211b0-9540-47ea-b619-89dd25b54cbd)
+	)
+	(rectangle
+		(start 210.82 190.5)
+		(end 279.4 210.82)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 110 55 170 1)
+		)
+		(fill
+			(type color)
+			(color 238 228 255 1)
+		)
+		(uuid 9fa02a35-bc1c-4cd8-809c-a4e018645198)
+	)
+	(polyline
+		(pts
+			(xy 245.11 190.5) (xy 244.39 188.9) (xy 245.83 188.9) (xy 245.11 190.5)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 25 130 50 1)
+		)
+		(fill
+			(type color)
+			(color 25 130 50 1)
+		)
+		(uuid a16602bc-2e55-45f6-ba21-ff94adcd7d36)
+	)
+	(polyline
+		(pts
+			(xy 190.5 120.65) (xy 192.1 119.93) (xy 192.1 121.37) (xy 190.5 120.65)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 110 55 170 1)
+		)
+		(fill
+			(type color)
+			(color 110 55 170 1)
+		)
+		(uuid a24abc0e-762e-4413-a1a9-863670d7b540)
+	)
+	(polyline
+		(pts
+			(xy 121.92 120.65) (xy 111.76 120.65) (xy 111.76 190.5)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 110 55 170 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid a5f75444-b55f-4b9e-9ff4-f5e8b62b5373)
+	)
+	(polyline
+		(pts
+			(xy 121.92 67.31) (xy 120.32 68.03) (xy 120.32 66.59) (xy 121.92 67.31)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 190 30 30 1)
+		)
+		(fill
+			(type color)
+			(color 190 30 30 1)
+		)
+		(uuid a725b950-a62a-45bb-9dec-64c67bcda081)
+	)
+	(polyline
+		(pts
+			(xy 190.5 120.65) (xy 200.66 120.65) (xy 200.66 177.8) (xy 232.41 177.8) (xy 232.41 190.5)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 110 55 170 1)
+		)
+		(fill
+			(type none)
+		)
+		(uuid aaea261b-41a4-4c57-a726-ee8770099ef0)
+	)
+	(rectangle
+		(start 175.26 219.71)
+		(end 180.34 222.758)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 165 125 0 1)
+		)
+		(fill
+			(type color)
+			(color 255 248 204 1)
+		)
+		(uuid abad68a7-0773-4af7-910a-83353050e1ff)
+	)
+	(polyline
+		(pts
+			(xy 111.76 190.5) (xy 111.04 188.9) (xy 112.48 188.9) (xy 111.76 190.5)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 110 55 170 1)
+		)
+		(fill
+			(type color)
+			(color 110 55 170 1)
+		)
+		(uuid af886cf5-53fd-41ed-8b96-239df68f3c79)
+	)
+	(polyline
+		(pts
+			(xy 245.11 165.1) (xy 245.83 166.7) (xy 244.39 166.7) (xy 245.11 165.1)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 25 130 50 1)
+		)
+		(fill
+			(type color)
+			(color 25 130 50 1)
+		)
+		(uuid b80acee0-7722-450f-b0b6-d3e2a96d7e1c)
+	)
+	(rectangle
+		(start 33.02 58.42)
+		(end 101.6 76.2)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 190 30 30 1)
+		)
+		(fill
+			(type color)
+			(color 255 226 226 1)
+		)
+		(uuid bbe022ab-ca07-44a5-b2c3-dfa6035124b2)
+	)
+	(polyline
+		(pts
+			(xy 245.11 124.46) (xy 245.83 126.06) (xy 244.39 126.06) (xy 245.11 124.46)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 25 130 50 1)
+		)
+		(fill
+			(type color)
+			(color 25 130 50 1)
+		)
+		(uuid c4da395d-d032-4f80-8080-ca24ab4dc5bb)
+	)
+	(rectangle
+		(start 210.82 58.42)
+		(end 279.4 76.2)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 190 30 30 1)
+		)
+		(fill
+			(type color)
+			(color 255 226 226 1)
+		)
+		(uuid d0d23ed4-7bb5-4089-99b4-49b30284ddf6)
+	)
+	(rectangle
+		(start 33.02 190.5)
+		(end 190.5 210.82)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 110 55 170 1)
+		)
+		(fill
+			(type color)
+			(color 238 228 255 1)
+		)
+		(uuid d351343c-2030-4b83-b338-41de255a91a6)
+	)
+	(rectangle
+		(start 121.92 58.42)
+		(end 190.5 76.2)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 190 30 30 1)
+		)
+		(fill
+			(type color)
+			(color 255 226 226 1)
+		)
+		(uuid d6cec9b0-35a5-4288-ac50-2ca12ded661e)
+	)
+	(rectangle
+		(start 138.43 219.71)
+		(end 143.51 222.758)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 25 130 50 1)
+		)
+		(fill
+			(type color)
+			(color 222 245 224 1)
+		)
+		(uuid d8d94090-10ec-41d0-bc63-288566677b2f)
+	)
+	(polyline
+		(pts
+			(xy 156.21 127) (xy 156.93 128.6) (xy 155.49 128.6) (xy 156.21 127)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 165 125 0 1)
+		)
+		(fill
+			(type color)
+			(color 165 125 0 1)
+		)
+		(uuid dc1fa43b-c159-40c8-a19f-614f1cb51a13)
+	)
+	(rectangle
+		(start 121.92 99.06)
+		(end 190.5 127)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 30 70 180 1)
+		)
+		(fill
+			(type color)
+			(color 222 233 255 1)
+		)
+		(uuid e3c121d0-eace-4ddb-a6de-b412bef47b79)
+	)
+	(rectangle
+		(start 33.02 147.32)
+		(end 101.6 165.1)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 165 125 0 1)
+		)
+		(fill
+			(type color)
+			(color 255 248 204 1)
+		)
+		(uuid f3f808d5-77f2-4716-a9e3-8a1f987a185c)
+	)
+	(text "+5V input"
+		(exclude_from_sim no)
+		(at 67.31 65.31 0)
+		(effects
+			(font
+				(size 1.6 1.6)
+				(bold yes)
+			)
+		)
+		(uuid "007a36d2-d189-4acf-9adb-062fb85ccc8a")
+	)
+	(text "ESD + terminator"
+		(exclude_from_sim no)
+		(at 245.11 154.21 0)
+		(effects
+			(font
+				(size 1.6 1.6)
+				(bold yes)
+			)
+		)
+		(uuid "02e984d2-1236-4f2b-9d51-354e3b0a5580")
+	)
+	(text "CAN transceiver"
+		(exclude_from_sim no)
+		(at 245.11 111.03 0)
+		(effects
+			(font
+				(size 1.6 1.6)
+				(bold yes)
+			)
+		)
+		(uuid "02ef15d4-c50d-4ca3-b4bc-b0c618484cf9")
+	)
+	(text "CAN bus"
+		(exclude_from_sim no)
+		(at 144.78 221.234 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0514724e-7763-4de1-a19d-e3e23ab1ccfe")
+	)
+	(text "+5V in · I2C1 · 14 GPIO · GND · (USB unused)"
+		(exclude_from_sim no)
+		(at 111.76 203.06 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "0fe653c6-b4ce-494d-aa6a-5e5a587a4c4c")
+	)
+	(text "System block diagram"
+		(exclude_from_sim no)
+		(at 27.94 46.99 0)
+		(effects
+			(font
+				(size 2 2)
+				(bold yes)
+			)
+			(justify left top)
+		)
+		(uuid "10ef499a-988b-4358-8f34-232f02e9d528")
+	)
+	(text "M.2 pins 20/22 · TVS D2 SMF6.0A"
+		(exclude_from_sim no)
+		(at 67.31 69.71 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "13088c00-c487-4d4a-975f-100aca06318d")
+	)
+	(text "NUP2105L · JP1 120 Ω"
+		(exclude_from_sim no)
+		(at 245.11 158.61 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "156d42b3-6a8f-4826-a9f7-69ac531a645a")
+	)
+	(text "SX2M XO · 22 Ω → PC14 (HSE bypass)"
+		(exclude_from_sim no)
+		(at 67.31 115.43 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "20077278-7e31-4fc1-b64c-e75956bc8add")
+	)
+	(text "Status LEDs + buzzer"
+		(exclude_from_sim no)
+		(at 67.31 154.21 0)
+		(effects
+			(font
+				(size 1.6 1.6)
+				(bold yes)
+			)
+		)
+		(uuid "2164a20f-d88d-4574-a60b-78bcad0c6518")
+	)
+	(text "STM32G0B1 M.2 2242 CAN module  ·  Rev A-d6  ·  Designer: Aaron  ·  Monkey Robotics"
+		(exclude_from_sim no)
+		(at 26.162 34.29 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left top)
+		)
+		(uuid "294bb715-aca3-421c-ba43-5425fc420a4c")
+	)
+	(text "I/O & indicators"
+		(exclude_from_sim no)
+		(at 181.61 221.234 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2a1e4728-2a28-40d4-8086-ffbfeb76792e")
+	)
+	(text "SHEET INDEX\n  1  Root — overview & block diagram\n  2  Power — 5 V input, TVS, TLV76733 LDO, power LEDs,\n            status LEDs, buzzer, 5 V monitor, test points\n  3  MCU — STM32G0B1KBT6, 8 MHz oscillator, decoupling, reset\n  4  CAN_M2 — SN65HVD230, ESD, termination, M.2 card edge\n  5  Datasheets — every part with clickable datasheet links\n\nKEY SPECIFICATIONS\n  Supply ........ +5V in 4.75–5.25 V: ≈ 40 mA typ,\n                  ≤ 240 mA worst → carrier ≥ 300 mA/module\n  Ambient ....... −20…+70 °C (LDO TJ ≤ 92 °C)\n  3V3 rail ...... TLV76733, 1 A, thermal shutdown;\n                  148 mA worst incl. 50 mA for the carrier\n  MCU ........... STM32G0B1KBT6, 64 MHz,\n                  128 KB Flash / 144 KB RAM\n  CAN ........... FDCAN2, 500 kbit/s, CANopen, ESD-protected\n  Clock ......... 8 MHz XO (±53 ppm worst) → PLL 64 MHz\n  Protection .... SMF6.0A TVS on +5V, NUP2105L on CAN\n  LEDs .......... red 5V · green 3V3 · white CAN · yellow USR\n  Buzzer ........ KLJ-5018 passive 5 V, 90 dB (PB7 4 kHz PWM)\n  Debug ......... SWD + VCP (USART1) → ST-Link V3MINIE\n  USB ........... wired to fingers 23/25, not used\n  Carrier I/O ... 14 GPIO + I2C1 + 3V3 out (≤ 50 mA)\n  PCB ........... M.2 2242 B-key, 4-layer 0.8 mm\n                  JLC04081H-3313, ENIG, bevelled fingers\n  Layers ........ Top Signal / GND Plane / 3V3 Plane /\n                  Bottom Signal\n  Parts ......... 40 parts: 5 JLC Extended (U1 X1 U2 BZ1 D1),\n                  2 Preferred (U3, D2), rest Basic\n\nREVISION HISTORY  (Rev A = not yet fabricated)\n   d1 2026-10-07 Aaron  From-scratch redesign of MES3\n   d2 2026-10-07 Aaron  Datasheet pinout pass, all nets\n                        named, Basic LEDs, USB_DN pair\n   d3 2026-10-07 Aaron  Review 1: active buzzer, R14 on\n                        HSE, C2/C5 sizes, carrier rules\n   d4 2026-10-08 Aaron  Review 2: TLV76733 LDO, D2 D_SMF,\n                        R7 0603, R8 20k, R12 4.7k, R15/R16\n                        at U3, carrier rules, USB unused\n   d5 2026-10-13 Aaron  Smaller buzzer: KLJ-5018-5040\n                        5.5 mm passive, 4 kHz PWM on PB7\n   d6 2026-10-14 Aaron  U1 → STM32G0B1KBT6 (LQFP-32):\n                        KBU6 out of stock; review fixes\n\nCarrier spec: MES4-CIF = CARRIER_INTERFACE.md (rev A-d6)"
+		(exclude_from_sim no)
+		(at 300.228 108.966 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.6)
+				(bold yes)
+			)
+			(justify left top)
+		)
+		(uuid "2c8f9405-b71b-45d2-8f03-1f8659634331")
+	)
+	(text "M.2 large group (pins 20–75)"
+		(exclude_from_sim no)
+		(at 111.76 198.66 0)
+		(effects
+			(font
+				(size 1.6 1.6)
+				(bold yes)
+			)
+		)
+		(uuid "3d7d7f27-ca36-47b9-9f78-65e64b30c428")
+	)
+	(text "TLV76733 LDO"
+		(exclude_from_sim no)
+		(at 156.21 65.31 0)
+		(effects
+			(font
+				(size 1.6 1.6)
+				(bold yes)
+			)
+		)
+		(uuid "4d9e739b-2fd3-4cff-821c-9b91d02e7408")
+	)
+	(text "64 MHz Cortex-M0+ · 128 KB"
+		(exclude_from_sim no)
+		(at 156.21 115.43 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "565afc72-eaf2-49d0-b7a3-f67c355d49a5")
+	)
+	(text "Arrows show power and signal flow (graphics only — not electrical connections)."
+		(exclude_from_sim no)
+		(at 27.94 228.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "6c0ace27-f652-483c-b7bc-457fc0cc32e6")
+	)
+	(text "Reference"
+		(exclude_from_sim no)
+		(at 255.27 221.234 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7f3c6b61-c398-4870-8499-ee5949508fc9")
+	)
+	(text "STM32G0B1KBT6"
+		(exclude_from_sim no)
+		(at 156.21 111.03 0)
+		(effects
+			(font
+				(size 1.6 1.6)
+				(bold yes)
+			)
+		)
+		(uuid "887a7061-465c-47ca-8cf8-108885f343e7")
+	)
+	(text "SN65HVD230 · FDCAN2"
+		(exclude_from_sim no)
+		(at 245.11 115.43 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "8cccec24-28ae-44dd-807c-6ba98223bbd9")
+	)
+	(text "÷3 → PB2 ADC · TP1–TP3"
+		(exclude_from_sim no)
+		(at 156.21 158.61 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a15392f9-213d-4aad-ae84-ea6219db763c")
+	)
+	(text "+3V3 plane"
+		(exclude_from_sim no)
+		(at 245.11 65.31 0)
+		(effects
+			(font
+				(size 1.6 1.6)
+				(bold yes)
+			)
+		)
+		(uuid "b3311dd5-9ad5-4178-84e2-99ee4cba8ed7")
+	)
+	(text "M.2 connector"
+		(exclude_from_sim no)
+		(at 218.44 221.234 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b7d9a65b-f262-4218-8e09-bbd7b2042dc4")
+	)
+	(text "Hierarchical sheets"
+		(exclude_from_sim no)
+		(at 302.26 43.18 0)
+		(effects
+			(font
+				(size 2 2)
+				(bold yes)
+			)
+			(justify left top)
+		)
+		(uuid "baa10dae-75f1-424a-9ada-5547cf33c1df")
+	)
+	(text "red 5V · green 3V3 · white CAN · yellow USR · PWM buzzer"
+		(exclude_from_sim no)
+		(at 67.31 158.61 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c31d25ab-cdcf-48b3-8cd5-f067c9b11f8b")
+	)
+	(text "5 V monitor"
+		(exclude_from_sim no)
+		(at 156.21 154.21 0)
+		(effects
+			(font
+				(size 1.6 1.6)
+				(bold yes)
+			)
+		)
+		(uuid "c6d826cd-bd0c-4a7a-9d3f-7bc69fd087db")
+	)
+	(text "Power"
+		(exclude_from_sim no)
+		(at 34.29 221.234 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ce29cb0d-6599-43cc-9b9b-28804dee664c")
+	)
+	(text "CAN · SWD · NRST · VCP · 3V3"
+		(exclude_from_sim no)
+		(at 245.11 203.06 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "d4518ea1-cb83-4286-a958-0afaeca49fd0")
+	)
+	(text "M.2 small group (1–11)"
+		(exclude_from_sim no)
+		(at 245.11 198.66 0)
+		(effects
+			(font
+				(size 1.6 1.6)
+				(bold yes)
+			)
+		)
+		(uuid "d9cf9fba-7f6e-4bc7-9690-328b5e578492")
+	)
+	(text "Clock"
+		(exclude_from_sim no)
+		(at 107.95 221.234 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "db368fbc-a1a1-46ff-851a-9e727bcde7b7")
+	)
+	(text "5 V → 3.3 V · 1 A · thermal shutdown"
+		(exclude_from_sim no)
+		(at 156.21 69.71 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "e7540800-ee2e-4730-862d-e13e56eef590")
+	)
+	(text "In2 · feeds all logic"
+		(exclude_from_sim no)
+		(at 245.11 69.71 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "e96caba5-5807-48c7-9983-d42e5c4fd99c")
+	)
+	(text "MES4-MCU"
+		(exclude_from_sim no)
+		(at 25.4 25.4 0)
+		(effects
+			(font
+				(size 5 5)
+				(bold yes)
+			)
+			(justify left top)
+		)
+		(uuid "f6b1fd2e-bfb0-445e-9205-67c05acc76d4")
+	)
+	(text "8 MHz oscillator"
+		(exclude_from_sim no)
+		(at 67.31 111.03 0)
+		(effects
+			(font
+				(size 1.6 1.6)
+				(bold yes)
+			)
+		)
+		(uuid "fa76d328-80fc-446c-a4e3-837eb7b6d135")
+	)
+	(text "MCU"
+		(exclude_from_sim no)
+		(at 71.12 221.234 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ff4d4da2-ad84-4d5c-831d-1978def81666")
+	)
+	(polyline
+		(pts
+			(xy 190.5 113.03) (xy 210.82 113.03)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 25 130 50 1)
+		)
+		(uuid "41414f87-9680-4527-9283-a1523da0a938")
+	)
+	(polyline
+		(pts
+			(xy 245.11 124.46) (xy 245.11 147.32)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 25 130 50 1)
+		)
+		(uuid "4bffb153-8870-49af-b482-0a83e126bcb9")
+	)
+	(polyline
+		(pts
+			(xy 101.6 113.03) (xy 121.92 113.03)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 205 110 0 1)
+		)
+		(uuid "7794365f-7f33-48cd-8221-e625034f41e6")
+	)
+	(polyline
+		(pts
+			(xy 245.11 165.1) (xy 245.11 190.5)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 25 130 50 1)
+		)
+		(uuid "bb44a550-afe0-4004-a505-faf3c104236e")
+	)
+	(polyline
+		(pts
+			(xy 190.5 67.31) (xy 210.82 67.31)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 190 30 30 1)
+		)
+		(uuid "d6a923af-d53b-4e4e-9ede-48c9343bb7d9")
+	)
+	(polyline
+		(pts
+			(xy 101.6 67.31) (xy 121.92 67.31)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 190 30 30 1)
+		)
+		(uuid "ed5077d7-c049-4171-8163-20284e9866a3")
+	)
+	(polyline
+		(pts
+			(xy 156.21 147.32) (xy 156.21 127)
+		)
+		(stroke
+			(width 0.3)
+			(type solid)
+			(color 165 125 0 1)
+		)
+		(uuid "f9d636f4-bcf3-4ae9-a364-73ece8d9f8c0")
+	)
+	(sheet
+		(at 302.26 50.8)
+		(size 40.64 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 190 30 30 1)
+		)
+		(fill
+			(color 255 226 226 1.0000)
+		)
+		(uuid "242741f3-d23c-45b7-a3cc-8aa38291ee8e")
+		(property "Sheetname" "Power"
+			(at 311.912 63.5 0)
+			(effects
+				(font
+					(size 4 4)
+					(thickness 0.8)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Power.kicad_sch"
+			(at 302.26 71.7046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "MES4-MCU"
+				(path "/ca929d81-ff24-4233-a1d6-c766cde424b1"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 353.06 50.8)
+		(size 40.64 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 90 90 90 1)
+		)
+		(fill
+			(color 236 236 236 1.0000)
+		)
+		(uuid "4e8e06d8-307a-4950-96bf-93b38f605aed")
+		(property "Sheetname" "Datasheets"
+			(at 355.854 63.754 0)
+			(effects
+				(font
+					(size 3.5 3.5)
+					(thickness 0.7)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Datasheets.kicad_sch"
+			(at 353.06 71.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "MES4-MCU"
+				(path "/ca929d81-ff24-4233-a1d6-c766cde424b1"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 352.425 81.28)
+		(size 40.64 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 25 130 50 1)
+		)
+		(fill
+			(color 222 245 224 1.0000)
+		)
+		(uuid "c1279f7f-48c3-4996-b890-13429de7415f")
+		(property "Sheetname" "CAN_M2"
+			(at 360.299 94.234 0)
+			(effects
+				(font
+					(size 4 4)
+					(thickness 0.8)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "CAN_M2.kicad_sch"
+			(at 352.425 102.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "MES4-MCU"
+				(path "/ca929d81-ff24-4233-a1d6-c766cde424b1"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 302.26 81.28)
+		(size 40.64 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.35)
+			(type solid)
+			(color 30 70 180 1)
+		)
+		(fill
+			(color 222 233 255 1.0000)
+		)
+		(uuid "d3f30355-721b-4572-811e-b325ddc4ec6d")
+		(property "Sheetname" "MCU"
+			(at 315.468 94.234 0)
+			(effects
+				(font
+					(size 4 4)
+					(thickness 0.8)
+					(bold yes)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MCU.kicad_sch"
+			(at 302.26 102.1846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "MES4-MCU"
+				(path "/ca929d81-ff24-4233-a1d6-c766cde424b1"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
