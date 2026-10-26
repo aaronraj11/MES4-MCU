@@ -50,6 +50,7 @@ Odd fingers are on the top side, even fingers on the bottom side. All signals ar
 - **Power:** supply 5 V on fingers 20/22 only. The module makes its own 3.3 V. Power down before inserting or removing it.
 - **Programming / debug:** SWD (fingers 7/9/11) with finger 4 as the target voltage reference. The UART on fingers 6/8 is handy as a debug console.
 - **CAN termination:** a CAN bus needs exactly two 120 Ω terminators, one at each end of the cable. Bridge solder jumper JP1 only if this module sits at an end. With everything powered off, CANH to CANL should measure about 60 Ω.
+- **CAN wiring:** never run CANH/CANL in a connector or cable that also carries more than 12 V. The SN65HVD230 bus pins are rated −4 to +16 V, so a short to a 24 V supply destroys the transceiver (and R7 if JP1 is bridged). Rev A accepts this and relies on the harness.
 - **Test points:** GND, 3V3 and 5V pads on the top side.
 
 ## Firmware notes
@@ -78,6 +79,7 @@ Designed for JLCPCB:
 
 - 4 layers, 0.8 mm, stackup JLC04081H-3313 (top signal / GND / 3V3 / bottom signal)
 - ENIG surface finish, gold fingers with a 20° / 0.3 mm bevel
+- Ordered as a single board, panelised by JLC on the order. JLC only bevels gold fingers on boards or panels of at least 50 × 50 mm, so ask for a panel with the fingers on an outer edge, mouse-bite tabs and no V-cut along the fingers.
 - Parts are mostly JLC Basic. The BOM lists LCSC numbers for every part.
 
 ## Status
