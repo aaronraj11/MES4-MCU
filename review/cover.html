@@ -1,0 +1,39 @@
+<h1>MES4-MCU · design review package R3</h1>
+<p class="sub">Input for schematic review R3 · schematic Rev A-d6 (title block 14 Oct 2026; notes updated 26 and 29 Oct) · 29 Oct 2026 · Monkey Robotics · Aaron Raj Bhatti</p>
+
+<p><b>What's in this package:</b> (1) this cover: what changed since review R2, the status of every R2 finding and what to look at; (2) the LTspice simulation report, 10 benches plus a model check, grouped by schematic sheet; (3) the 5-page schematic (A3), appended after the report. The carrier interface specification (MES4-CIF) is referenced but not included. Its must-follow rules are printed on schematic sheet 4.</p>
+<p><b>The module:</b> STM32G0B1KBT6 on an M.2 2242 B-key card (custom pinout, not a PC M.2 card), 5 V in, TLV76733 3.3 V LDO, SN65HVD230 CAN at 500 kbit/s, 4 status LEDs, passive buzzer and a 5 V monitor. Rev A is not fabricated yet.</p>
+
+<h2>A · Changes since review R2 (Rev A-d4, 8 Oct)</h2>
+<div class="tw"><table>
+<tr><th>Sheet (page)</th><th>Change</th><th>Why</th></tr>
+<tr><td>Power (2)</td><td><b>BZ1 → KLJ-5018-5040</b> passive magnetic buzzer (5.5 × 5.5 × 1.8 mm, 25 Ω), driven with 4 kHz PWM on PB7 (TIM4_CH2) through Q3. Idle LOW, never DC</td><td>d5, 13 Oct: smaller part</td></tr>
+<tr><td>MCU (3)</td><td><b>U1 STM32G0B1KBU6 (UFQFPN-32) → STM32G0B1KBT6 (LQFP-32)</b>, non-N pinout. No exposed pad: pin 5 is the only VSS</td><td>d6, 14 Oct: KBU6 out of stock (the sheet 1 revision block also notes "review fixes" for d6)</td></tr>
+<tr><td>MCU (3)</td><td>Exposed-pad notes corrected for the LQFP-32: pin 5 runs to the C4/C5 ground pads and the GND plane</td><td>26 Oct: the notes still described the UFQFPN pad</td></tr>
+<tr><td>MCU (3)</td><td>NRST note: C6 recharges in <b>≈ 5 ms (3–7 ms)</b>, was ≈ 4 ms</td><td>29 Oct: sim MCU2 (25–55 kΩ pull-up range)</td></tr>
+<tr><td>CAN_M2 (4)</td><td>Carrier rule 4: <b>+5V never below −0.3 V</b> at the fingers</td><td>29 Oct: sim PWR3. A negative transient lets U2's body diode drag 3V3 below the MCU's limit</td></tr>
+<tr><td>Docs</td><td>README: JLC panel needed for bevelled fingers; CAN must not share a cable with &gt; 12 V. BRINGUP step 12: buzzer ≤ 100 mA extra (was 80)</td><td>26 / 29 Oct; sim BZ1</td></tr>
+<tr><td>sim/ (new)</td><td>LTspice benches for every analog and power circuit, fed by the real MES4-Carrier-EC 5 V path</td><td>Simulation evidence (report follows)</td></tr>
+</table></div>
+<p class="note">The R2 decisions still stand: D1 TLV76733 LDO, D2 SN65HVD230 with its hardening (R7 0603, R15 pull-up on CAN_TX, R16 Rs link, rule 9), D3 no M.2 pinout change, D4 USB unused.</p>
+
+<h2 class="pb">B · Status of the R2 findings</h2>
+<div class="tw"><table>
+<tr><th>ID</th><th>Finding</th><th>Status</th><th>How / evidence</th></tr>
+<tr><td>R1</td><td>HT7333-2 below its recommended input range</td><td><span class="pill ok">Fixed</span></td><td>TLV76733 (VIN 2.5–16 V). PWR4: 3V3 stays ≥ 3.25 V from a 3.38 V input at 148 mA</td></tr>
+<tr><td>R2</td><td>LDO has no thermal shutdown</td><td><span class="pill ok">Fixed</span></td><td>TLV76733: thermal shutdown at 180 °C plus fold-back to 0.15–0.35 A on a pin-4 short</td></tr>
+<tr><td>R3</td><td>3V3 budget used the no-load SN65HVD230 current</td><td><span class="pill ok">Fixed</span></td><td>Budget is 148 mA with U3 driving 60 Ω. PWR4: U2 0.29 W at 5.25 V. PWR5: ±7 mV under CAN traffic plus a 50 mA step</td></tr>
+<tr><td>R4</td><td>Carrier rule asked for series R on CAN</td><td><span class="pill ok">Fixed</span></td><td>Rule 8: TVS only, no series R. CAN2: 22 Ω per line drops VOD to 1.25 V, 47 Ω to 0.88 V (below 0.9 V)</td></tr>
+<tr><td>R5</td><td>D2 footprint SOD-123F vs the SMF part</td><td><span class="pill ok">Fixed</span></td><td><code>Diode_SMD:D_SMF</code></td></tr>
+<tr><td>R6</td><td>PLL input duty cycle margin</td><td><span class="pill ok">Firmware</span></td><td>PLLM = 2 (4 MHz PLL input). MCU1: PC14 duty 50.0 % with R14, no overshoot past the clamp diodes</td></tr>
+<tr><td>R7</td><td>PB2 injection reasoning was wrong</td><td><span class="pill ok">Fixed</span></td><td>R8 = 20 kΩ (÷3), note rewritten. PWR3: PB2 peaks at 2.76 V at D2's rated pulse. PWR4: ADC codes 1965 / 2068 / 2172 as in BRINGUP</td></tr>
+<tr><td>R8</td><td>NUP2105L doesn't protect U3 from DC bus faults</td><td><span class="pill warn">Accepted</span></td><td>SN65HVD230 kept (D2). Carrier rule 9 and the README: CAN never shares a cable or connector with &gt; 12 V</td></tr>
+</table></div>
+
+<h2>C · What to review</h2>
+<ul>
+<li><b>The schematic as a whole</b> (the five A3 pages at the end), especially what changed in d5 / d6: the passive buzzer drive on Power and the LQFP-32 U1 on MCU.</li>
+<li><b>Buzzer current</b> (report §3, BZ1). The bench gives 69–95 mA extra and 0.3–0.5 W in the coil while beeping, against the datasheet's 80 mA. Is the PWM drive with the D3 freewheel acceptable as is, or should the default duty be lower?</li>
+<li><b>Negative +5V transients</b> (report §3, PWR3). The module relies on the carrier (rule 4) to keep +5V above −0.3 V. Is that acceptable, or should the module get its own protection?</li>
+<li><b>Model assumptions</b> (report §7). U2 and U3 are behavioural models, and X1's edge rate and BZ1's inductance are assumed, not published. Check that the conclusions don't hang on them.</li>
+</ul>
