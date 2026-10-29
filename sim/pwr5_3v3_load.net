@@ -1,0 +1,23 @@
+* PWR5 (Power, page 2 + CAN, page 4): +3V3 under load steps, fed from the MES4-Carrier-EC +5V.
+* 1.0-1.5 ms: CAN traffic at the bit-stuffing worst case (5 dominant / 1 recessive, 2 us bits), U3 dominant = 17 mA ICC max
+*            + 50 mA bus current (VOD 3 V into 60 ohm). 2.0 ms: carrier pin-4 load 0 -> 50 mA in 1 us. 3.0 ms: both off.
+.param pb4=0 pb5=0 Icar=0
+.include models.inc
+Vu1 u1 0 PWL(0 0 20u 5.0)                   ; ramped so the .op starts from 0 V
+.include carrier5v.inc
+Vjoin f5 fin 0
+.include module.inc
+Vdom dom 0 PULSE(0 1 1m 20n 20n 10u 12u 42)
+B_U3 v3 0 I=(17m+50m*V(dom))*limit((V(v3)-2)/0.5,0,1)
+Vcar car 0 PWL(0 0 2m 0 {2m+1u} 1 3m 1 {3m+1u} 0)
+B_CAR2 v3 0 I=50m*V(car)*limit(V(v3)/3.3,0,1)
+.tran 0 4m 0 20n
+.options plotwinsize=0
+.save V(v3) V(v5) I(Vjoin)
+.meas tran V3_pre  FIND V(v3) AT 0.95m
+.meas tran V3_can_min MIN V(v3) FROM 1m TO 1.6m
+.meas tran V3_can_max MAX V(v3) FROM 1m TO 1.6m
+.meas tran V3_car_min MIN V(v3) FROM 2m TO 2.5m
+.meas tran V3_rel_max MAX V(v3) FROM 3m TO 3.95m
+.meas tran V5_min  MIN V(v5) FROM 0.9m TO 3.95m
+.end

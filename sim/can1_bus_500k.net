@@ -1,0 +1,45 @@
+* CAN1 (CAN, page 4): 500 kbit/s on a 10 m bus. Module A (this board, JP1 bridged) transmits; two MES4-MCUs on 0.3 m stubs
+* at 3 m and 6 m (JP1 open) and a terminated MES4-MCU at the far end B listen. Each node: U3 input + D1 NUP2105L.
+* Cable 120 ohm differential, 5 ns/m, modelled as two 60 ohm lines. Driver stepped typical (VOD 2.0 V) / weakest (1.5 V).
+* Bits are 2 us from 1 us: D R D D D D D R D R R R R R (D = dominant). Sample point 87.5 % = 1.75 us into the bit.
+.step param Rd list 13.5 38
+.include models.inc
+V3   v3 0 3.3
+Vrec rec 0 3.3
+Vtx  txd 0 PWL(0 3.3 1u 3.3 1.01u 0 3u 0 3.01u 3.3 5u 3.3 5.01u 0 15u 0 15.01u 3.3 17u 3.3 17.01u 0 19u 0 19.01u 3.3)
+XU3A txd ha la v3 0 HVD230 Rd={Rd}
+XD1A ha la 0 NUP2105L
+R7A  ha la 120
+TAh ha 0 h0 0 Z0=60 Td=0.3n                    ; module + socket + carrier to the bus connector, ~5 cm
+TAl la 0 l0 0 Z0=60 Td=0.3n
+T1h h0 0 h3 0 Z0=60 Td=15n
+T1l l0 0 l3 0 Z0=60 Td=15n
+TS1h h3 0 s1h 0 Z0=60 Td=1.5n                  ; 0.3 m stub at 3 m
+TS1l l3 0 s1l 0 Z0=60 Td=1.5n
+XU3S1 rec s1h s1l v3 0 HVD230 Rd={Rd}
+XD1S1 s1h s1l 0 NUP2105L
+T2h h3 0 h6 0 Z0=60 Td=15n
+T2l l3 0 l6 0 Z0=60 Td=15n
+TS2h h6 0 s2h 0 Z0=60 Td=1.5n                  ; 0.3 m stub at 6 m
+TS2l l6 0 s2l 0 Z0=60 Td=1.5n
+XU3S2 rec s2h s2l v3 0 HVD230 Rd={Rd}
+XD1S2 s2h s2l 0 NUP2105L
+T3h h6 0 hb 0 Z0=60 Td=20n
+T3l l6 0 lb 0 Z0=60 Td=20n
+XU3B rec hb lb v3 0 HVD230 Rd={Rd}
+XD1B hb lb 0 NUP2105L
+R7B  hb lb 120
+.tran 0 30u 0 0.2n
+.options plotwinsize=0
+.save V(txd) V(ha) V(la) V(hb) V(lb) V(s1h) V(s1l)
+.meas tran vod_a    FIND V(ha,la) AT 14u
+.meas tran vod_b    FIND V(hb,lb) AT 14u
+.meas tran vod_s1   FIND V(s1h,s1l) AT 14u
+.meas tran vmin_dom_b MIN V(hb,lb) FROM 5.3u TO 15u
+.meas tran vmin_dom_s1 MIN V(s1h,s1l) FROM 5.3u TO 15u
+.meas tran vmax_rec_b MAX V(hb,lb) FROM 15.3u TO 17u
+.meas tran vmax_rec_s1 MAX V(s1h,s1l) FROM 15.3u TO 17u
+.meas tran vsp_rec_b FIND V(hb,lb) AT 4.75u
+.meas tran t_dom_b  TRIG V(txd) VAL=1.65 FALL=1 TD=4u TARG V(hb,lb) VAL=0.9 RISE=1 TD=5u
+.meas tran t_rec_b  TRIG V(txd) VAL=1.65 RISE=1 TD=14u TARG V(hb,lb) VAL=0.5 FALL=1 TD=15u
+.end

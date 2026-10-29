@@ -1,0 +1,27 @@
+* PWR4 (Power, page 2): +5V swept 3.0 -> 7.5 V at the worst-case 148 mA 3V3 load (MCU 20, U3 dominant 67, X1 10,
+* GPIO 1, carrier pin 4 50 mA) with all four LEDs on. Checks LED currents, the VSENSE ADC code, U2 dropout and D2.
+.param pb4=3.3 pb5=3.3 Icar=50m
+.include models.inc
+Vin fin 0 5
+.include module.inc
+B_U3 v3 0 I=68m*limit((V(v3)-2)/0.5,0,1)
+.dc Vin 3.0 7.5 5m
+.save V(v3) V(pb2) I(DL1) I(DL2) I(DL3) I(DL4) I(D2) I(Vin) I(Vu2)
+.meas dc Iled1_475 FIND I(DL1) AT 4.75
+.meas dc Iled1_525 FIND I(DL1) AT 5.25
+.meas dc Iled2_500 FIND I(DL2) AT 5.0
+.meas dc Iled3_500 FIND I(DL3) AT 5.0
+.meas dc Iled4_500 FIND I(DL4) AT 5.0
+.meas dc Iled3_475 FIND I(DL3) AT 4.75
+.meas dc adc_475   FIND V(pb2)/V(v3)*4095 AT 4.75
+.meas dc adc_500   FIND V(pb2)/V(v3)*4095 AT 5.0
+.meas dc adc_525   FIND V(pb2)/V(v3)*4095 AT 5.25
+.meas dc vin_325   WHEN V(v3)=3.25 RISE=1
+.meas dc vin_300   WHEN V(v3)=3.0 RISE=1
+.meas dc v3_475    FIND V(v3) AT 4.75
+.meas dc v3_550    FIND V(v3) AT 5.5
+.meas dc Iin_500   FIND -I(Vin) AT 5.0
+.meas dc Pu2_525   FIND I(Vu2)*(5.25-V(v3)) AT 5.25
+.meas dc vin_d2_1m WHEN -I(D2)=1m RISE=1
+.meas dc vin_d2_10m WHEN -I(D2)=10m RISE=1
+.end

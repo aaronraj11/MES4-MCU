@@ -1,0 +1,26 @@
+* MCU1 (MCU, page 3): 8 MHz HSE from X1 (SX2M) through R14 to PC14 (HSE bypass), routed lengths from the PCB:
+* HSE_XO 2.29 mm, HSE_IN 2.04 mm, 0.2 mm on F.Cu over In1 GND (~45 ohm: 0.28 nH/mm, 0.14 pF/mm), no vias.
+* X1 rise/fall and output resistance aren't published: fast corner 1.5 ns edges, 15 ohm. R14 stepped 0 / 22 ohm.
+.step param R14 list 1m 22
+.include models.inc
+V3  v3 0 3.3
+Vx  x0 0 PULSE(0 3.3 20n 1.5n 1.5n 61n 125n)
+Rx  x0 x1 15
+Lx1 x1 xo 1.64n                                ; X1 pad / package 1 nH + HSE_XO 0.64 nH
+R14 xo pa {R14}
+Lpc pa pc 3.57n                                ; HSE_IN 0.57 nH + LQFP-32 lead and bond wire 3 nH
+Cpin pc 0 5.6p                                 ; PC14 5 pF + both traces 0.6 pF (lumped: 4 mm is far below an edge length)
+Dhi pc v3 DPROT
+Dlo 0 pc DPROT
+.tran 0 300n 0 20p
+.options plotwinsize=0
+.save V(pc) V(xo) I(Dhi) I(Dlo)
+.meas tran Vpc_max  MAX V(pc)
+.meas tran Vpc_min  MIN V(pc) FROM 30n TO 299n
+.meas tran Iinj_hi  MAX I(Dhi)
+.meas tran Iinj_lo  MAX I(Dlo)
+.meas tran tr_pc    TRIG V(pc) VAL=0.66 RISE=2 TARG V(pc) VAL=2.64 RISE=2
+.meas tran t_up     WHEN V(pc)=1.65 RISE=2
+.meas tran t_dn     WHEN V(pc)=1.65 FALL=2
+.meas tran duty     PARAM (t_dn-t_up)/125n*100
+.end

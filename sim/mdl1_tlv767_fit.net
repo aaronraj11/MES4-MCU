@@ -1,0 +1,17 @@
+* MDL1 (model check): U2 TLV76733 model against TI Fig. 7-12 (VIN 5 V, COUT 1 uF, 250 -> 850 mA at 0.8 A/us)
+* and Fig. 7-11 (1 mA -> 1 A at 0.5 A/us). Datasheet: about -120 mV / +100 mV for the 600 mA step.
+.include models.inc
+Vin in 0 PWL(0 0 20u 5)
+Cin in 0 1u Rser=5m
+XU2 in out 0 TLV76733
+Cout out 0 1u Rser=5m
+Iload out 0 PWL(0 0 0.8m 0 1m 0.25 1.5m 0.25 {1.5m+0.75u} 0.85 1.6m 0.85 {1.6m+0.75u} 0.25 2.5m 0.25 {2.5m+2u} 1.0 2.6m 1.0 {2.6m+2u} 1m)
+.tran 0 3m 0 10n
+.options plotwinsize=0
+.save V(out) I(Iload) V(xu2:en) V(xu2:ss) V(xu2:pc) V(xu2:xi)
+.meas tran v_pre    FIND V(out) AT 1.49m
+.meas tran dv_step  MIN V(out) FROM 1.5m TO 1.6m
+.meas tran dv_rel   MAX V(out) FROM 1.6m TO 1.7m
+.meas tran v_850    FIND V(out) AT 1.59m
+.meas tran dv_1a    MIN V(out) FROM 2.5m TO 2.6m
+.end

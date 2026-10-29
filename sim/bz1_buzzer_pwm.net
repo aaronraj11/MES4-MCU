@@ -1,0 +1,38 @@
+* BZ1 (Power, page 2): BZ1 KLJ-5018-5040 passive buzzer, 4 kHz 50 % PWM on PB7 for 10 ms (8-18 ms), fed from the
+* MES4-Carrier-EC +5V. Coil 25 ohm; its inductance is not published, so it is stepped 0.1 / 0.3 / 1 mH.
+* Q3 AO3400A gate straight from PB7 (~40 ohm GPIO), R12 4.7k pull-down, D3 1N4148WS freewheel across the coil.
+.param pb4=0 pb5=0 Icar=10m
+.step param Lbz list 0.1m 0.3m 1m
+.include models.inc
+Vu1 u1 0 PWL(0 0 20u 5.0)                   ; ramped so the .op starts from 0 V
+.include carrier5v.inc
+Vjoin f5 fin 0
+.include module.inc
+B_U3 v3 0 I=10m*limit((V(v3)-2)/0.5,0,1)
+Vpb7 pb7s 0 PULSE(0 3.3 8m 10n 10n 125u 250u 40)
+Rpb7 pb7s pb7 40
+R12 pb7 0 4.7k
+Lbz v5 bzx {Lbz}
+Rbz bzx bzn 25
+M3  bzn pb7 0 AO3400A
+D3  bzn v5 D1N4148W
+.tran 0 20m 0 20n
+.options plotwinsize=0
+.save V(v5) V(v3) V(pb2) V(bzn) V(pb7) I(Lbz) I(Vjoin) I(D3)
+.meas tran Iin_idle  AVG I(Vjoin) FROM 7m TO 7.95m
+.meas tran Iin_bz    AVG I(Vjoin) FROM 16m TO 18m
+.meas tran dIin      PARAM Iin_bz-Iin_idle
+.meas tran Icoil_avg AVG I(Lbz) FROM 16m TO 18m
+.meas tran Icoil_pk  MAX I(Lbz)
+.meas tran Icoil_pp  PP I(Lbz) FROM 16m TO 18m
+.meas tran Pcoil     AVG I(Lbz)*I(Lbz)*25 FROM 16m TO 18m
+.meas tran Vds_max   MAX V(bzn)
+.meas tran Ird_d3    MIN I(D3)
+.meas tran V5_pp     PP V(v5) FROM 16m TO 18m
+.meas tran V3_pp     PP V(v3) FROM 16m TO 18m
+.meas tran Vpb2_idle FIND V(pb2) AT 7.95m
+.meas tran Vpb2_bz   AVG V(pb2) FROM 16m TO 18m
+.meas tran Vpb2_pp   PP V(pb2) FROM 16m TO 18m
+.meas tran lsb_shift PARAM (Vpb2_bz-Vpb2_idle)/3.3*4095
+.meas tran lsb_pp    PARAM Vpb2_pp/3.3*4095
+.end

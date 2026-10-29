@@ -1,0 +1,19 @@
+* CAN2 (CAN, page 4): MES4-CIF rule 8 check, "no series resistors on CANH / CANL". A carrier puts Rs in each line between
+* the fingers and the bus; this module (JP1 open) drives a bus terminated at both ends (60 ohm). Rs stepped 0 / 22 / 47 / 100 ohm,
+* driver typical (Rd 13.5) and weakest (Rd 38). The far receivers need VOD >= 0.9 V (VIT+ max); ISO 11898-2 asks 1.5 V.
+.step param Rs list 1m 22 47 100
+.step param Rd list 13.5 38
+.include models.inc
+V3   v3 0 3.3
+Vrec rec 0 3.3
+Vtx  txd 0 0
+XU3A txd ha la v3 0 HVD230 Rd={Rd}
+XD1A ha la 0 NUP2105L
+RsH  ha bh {Rs}
+RsL  la bl {Rs}
+Rterm bh bl 60
+XU3B rec bh bl v3 0 HVD230 Rd={Rd}
+.tran 0 2u 0 1n
+.save V(bh) V(bl)
+.meas tran vod FIND V(bh,bl) AT 1.9u
+.end

@@ -1,0 +1,23 @@
+* PWR2 (Power, page 2) informative: the module is pushed into a live slot (MES4-CIF rule 5 broken). The carrier +5V is up,
+* its C8 (7 uF) sits at the socket, the module's C1 is empty. Fingers 20/22 + socket: 3 nH; contact closes in one go
+* (no bounce), 10 mohm. Checks the inrush, the +5V overshoot against D2 and the dip on the carrier rail.
+.param pb4=0 pb5=0 Icar=0
+.include models.inc
+Vu1 u1 0 PWL(0 0 20u 5.0)                   ; ramped so the .op starts from 0 V
+.include carrier5v.inc
+S_plug f5 fin ctl 0 SWPLUG
+Vctl ctl 0 PWL(0 0 200u 0 200.01u 1)
+.model SWPLUG SW(Ron=10m Roff=1G Vt=0.5 Vh=0)
+.include module.inc
+B_U3 v3 0 I=10m*limit((V(v3)-2)/0.5,0,1)
+.tran 0 1.5m 0 2n
+.options plotwinsize=0
+.save V(f5) V(v5) V(v3) I(S_plug) I(D2)
+.meas tran Ipk_plug MAX abs(I(S_plug))
+.meas tran Q_plug   INTEG -I(S_plug) FROM 200u TO 205u
+.meas tran V5_max   MAX V(v5)
+.meas tran Ipk_d2   MAX -I(D2)
+.meas tran Vf5_min  MIN V(f5) FROM 200u TO 1.49m
+.meas tran V3_max   MAX V(v3)
+.meas tran V3_end   FIND V(v3) AT 1.48m
+.end

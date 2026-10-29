@@ -1,0 +1,28 @@
+* MCU2 (MCU, page 3): NRST with C6 100 nF and the STM32 internal pull-up RPU (25 / 40 / 55 kohm min / typ / max).
+* 3V3 comes up as in PWR1 (U2 soft-start). The STM32 holds NRST low while VDD < 2.0 V (POR / BOR, approx.), drives a
+* 20 us internal reset pulse at 10 ms (IWDG, ~50 ohm open drain, assumed), and an ST-Link / carrier button holds NRST
+* low for 1 ms from 20 ms (20 ohm). NRST trace 30 mm + carrier / ST-Link: 20 pF.
+.step param Rpu list 25k 40k 55k
+V3  v3 0 PWL(0 0 0.1m 0 0.6m 3.3)
+Rpu v3 nrst {Rpu}
+C6  nrst 0 100n Rser=20m
+Ctr nrst 0 20p
+Spor nrst 0 por 0 SWINT
+Bpor por 0 V=if((V(v3)<2.0) | ((time>10m) & (time<10.02m)), 1, 0)
+.model SWINT SW(Ron=50 Roff=1G Vt=0.5 Vh=0)
+Sext nrst 0 ext 0 SWEXT
+Vext ext 0 PWL(0 0 20m 0 20.0001m 1 21m 1 21.0001m 0)
+.model SWEXT SW(Ron=20 Roff=1G Vt=0.5 Vh=0)
+.tran 0 30m 0 100n
+.options plotwinsize=0
+.save V(v3) V(nrst)
+.meas tran t_por    WHEN V(v3)=2.0 RISE=1
+.meas tran t_run    WHEN V(nrst)=2.31 RISE=1
+.meas tran t_rel    PARAM t_run-t_por
+.meas tran Vmin_int MIN V(nrst) FROM 10m TO 10.05m
+.meas tran t_int_rec WHEN V(nrst)=2.31 RISE=1 TD=10.02m
+.meas tran t_int    PARAM t_int_rec-10.02m
+.meas tran Vmin_ext MIN V(nrst) FROM 20m TO 21m
+.meas tran t_ext_rec WHEN V(nrst)=2.31 RISE=1 TD=21m
+.meas tran t_ext    PARAM t_ext_rec-21m
+.end

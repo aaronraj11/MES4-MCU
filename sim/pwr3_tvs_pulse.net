@@ -1,0 +1,26 @@
+* PWR3 (Power, page 2): D2 SMF6.0A at its rating, 19.4 A 10/1000 us, positive at 1 ms and negative at 8.5 ms,
+* straight into the fingers (no carrier filter).
+* Checks what U2 (18 V abs), C1 (25 V), PB2 (FT_ea, VDD + 4 V abs) and the 3V3 rail see.
+* The bus is held at 5 V by a source that can't sink (diode, 1 ohm), so the positive pulse goes entirely into D2.
+.param pb4=0 pb5=0 Icar=10m
+.include models.inc
+Vs  s 0 PWL(0 0 20u 5.3)                      ; ramped so the .op starts from 0 V
+Ds  s s2 DIDEAL
+Rs  s2 fin 1
+.model DIDEAL D(Ron=1m Roff=1G Vfwd=0.3)
+Ipos 0 fin EXP(0 19.7 1m 2.6u 1m 1.443m)   ; ~19.4 A peak at ~16 us, 50 % at ~1 ms
+Ineg fin 0 EXP(0 19.7 8.5m 2.6u 8.5m 1.443m)
+.include module.inc
+B_U3 v3 0 I=10m*limit((V(v3)-2)/0.5,0,1)
+.tran 0 16m 0 50n
+.options plotwinsize=0
+.save V(v5) V(v3) V(pb2) I(D2) I(Vu2)
+.meas tran V5_max  MAX V(v5)
+.meas tran V5_min  MIN V(v5)
+.meas tran Ipk_d2  MAX -I(D2)
+.meas tran E_d2    INTEG -I(D2)*V(v5) FROM 0.9m TO 8m
+.meas tran Vpb2_max MAX V(pb2)
+.meas tran V3_max  MAX V(v3)
+.meas tran V3_min  MIN V(v3) FROM 8m TO 15.9m
+.meas tran Irev_u2 MIN I(Vu2)
+.end

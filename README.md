@@ -72,6 +72,7 @@ Odd fingers are on the top side, even fingers on the bottom side. All signals ar
 | `MES4-MCU-BOM.csv` | bill of materials with LCSC part numbers |
 | `MES4-MCU.kicad_dru` | custom design rules (JLCPCB 4-layer) |
 | `MES4-MCU.pretty`, `MES4-MCU.3dshapes`, `MES4-MCU.kicad_sym` | project footprints, 3D models and symbols |
+| `sim/` | LTspice benches for the power, MCU and CAN sheets (`python3 run_sims.py`, then `python3 make_report.py` → `report.html`) |
 
 ## Manufacturing
 

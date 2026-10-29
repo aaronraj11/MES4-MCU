@@ -1,0 +1,24 @@
+* PWR1 (Power, page 2): power-up on the MES4-Carrier-EC +5V. Its U1 (URB2405S-6WR3) output ramps 0 -> 5 V,
+* in 2 ms (assumed soft start) and in 100 us (fast corner). U2 starts at its 2.2 V UVLO, then soft-starts for 500 us.
+.param pb4=0 pb5=0 Icar=10m
+.step param tr list 2m 0.1m
+.include models.inc
+Vu1 u1 0 PWL(0 0 0.2m 0 {0.2m+tr} 5)
+.include carrier5v.inc
+Vjoin f5 fin 0                                ; ammeter: current into the module fingers
+.include module.inc
+B_U3 v3 0 I=10m*limit((V(v3)-2)/0.5,0,1)     ; U3 recessive, ICC 10 mA typ
+.tran 0 4m 0 50n
+.options plotwinsize=0
+.save V(v5) V(v3) I(Vjoin) I(Vu2) I(DL2) V(pb2)
+.meas tran Ipk_in   MAX I(Vjoin)
+.meas tran Ipk_u2   MAX I(Vu2)
+.meas tran t_uvlo   WHEN V(v5)=2.2 RISE=1
+.meas tran t_3v0    WHEN V(v3)=3.0 RISE=1
+.meas tran t_ss     PARAM t_3v0-t_uvlo
+.meas tran V3_max   MAX V(v3)
+.meas tran V5_max   MAX V(v5)
+.meas tran t_led2   WHEN I(DL2)=1m RISE=1
+.meas tran V3_end   FIND V(v3) AT 3.9m
+.meas tran Iin_end  FIND I(Vjoin) AT 3.9m
+.end

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MES4-MCU simulations</title>
+<style>
+:root{--bg:#fbfaf7;--fg:#22211f;--mut:#6b6a65;--line:#d8d6cf;--card:#fff;--ok:#2f6b16;--okb:#eaf3de;--warn:#7a4806;--warnb:#faeeda;--bad:#8a2424;--badb:#fcebeb;--lim:#a32d2d}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b1b1a;--fg:#ecebe6;--mut:#a5a39b;--line:#3a3936;--card:#242422;--ok:#b5d98c;--okb:#22331a;--warn:#f2c77a;--warnb:#3a2c13;--bad:#f2a5a5;--badb:#3d1d1d;--lim:#f09595}}
+:root[data-theme="dark"]{--bg:#1b1b1a;--fg:#ecebe6;--mut:#a5a39b;--line:#3a3936;--card:#242422;--ok:#b5d98c;--okb:#22331a;--warn:#f2c77a;--warnb:#3a2c13;--bad:#f2a5a5;--badb:#3d1d1d;--lim:#f09595}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:860px;margin:0 auto;padding:24px 16px 48px}
+h1{font-size:24px;font-weight:600;margin:0 0 4px}h2{font-size:18px;font-weight:600;margin:32px 0 8px}
+p.sub{color:var(--mut);margin:0 0 20px}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:8px 0}
+th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{color:var(--mut);font-weight:500}
+.pill{display:inline-block;padding:1px 8px;border-radius:10px;font-size:12px;font-weight:600;white-space:nowrap}
+.ok{background:var(--okb);color:var(--ok)}.na{background:var(--line);color:var(--mut)}.warn{background:var(--warnb);color:var(--warn)}.bad{background:var(--badb);color:var(--bad)}
+figure{margin:12px 0;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 10px 4px}
+figcaption{font-size:13px;color:var(--mut);margin:0 0 4px}
+svg .grid{stroke:var(--line);stroke-width:.6}svg .ax{fill:var(--mut);font-size:11px}
+svg .lim{stroke:var(--lim);stroke-width:1;stroke-dasharray:5 4}svg .limt{fill:var(--lim);font-size:11px}
+svg .lg{fill:var(--fg);font-size:11px}
+.grp{font-size:12px;color:var(--mut);margin:-4px 0 8px}
+.grp b{color:var(--fg);font-weight:600}
+h3{font-size:15px;font-weight:600;margin:22px 0 4px}
+.note{border-left:3px solid var(--line);padding:2px 0 2px 12px;color:var(--mut);font-size:14px}
+.tw{overflow-x:auto}
+@page{size:A4;margin:14mm 13mm}
+@media print{
+ :root{--bg:#fff;--fg:#1d1d1b;--mut:#55544f;--line:#cfcdc5;--card:#fff;--ok:#2f6b16;--okb:#e3f0d3;--warn:#6b3f05;--warnb:#f8e7c6;--bad:#8a2424;--badb:#f8dddd;--lim:#a32d2d}
+ body{font-size:10pt;line-height:1.45}main{max-width:none;padding:0}
+ h1{font-size:20pt}h2{font-size:14pt;break-after:avoid;margin-top:18pt}h3{font-size:11.5pt;break-after:avoid}
+ figure,tr,.grp,.note{break-inside:avoid}thead{display:table-header-group}figure{border-color:#cfcdc5}
+ .pb{break-before:page}
+ .pill{border:1px solid currentColor}
+}
+code{font-size:13px}ul{padding-left:20px}
+</style></head><body><main>
+<h1>MES4-MCU · LTspice simulations</h1>
+<p class="sub">Schematic Rev A-d6 (14 Oct 2026) · simulated 29 Oct 2026 · Monkey Robotics · Aaron Raj Bhatti</p>
+
+<p>Ten LTspice benches cover every analog and power circuit on the module, grouped by schematic sheet like the MES4-Carrier-EC benches, plus one bench that checks the U2 regulator model against TI's datasheet. The +5V benches are fed by the real MES4-Carrier-EC 5 V path (U1 URB2405S-6WR3, F2, FB1, C6–C9). No circuit fails. Three results changed a bring-up limit or a note (section 2, done 29 Oct).</p>
+
+<h2>1 · Summary</h2>
+<div class="tw"><table>
+<tr><th>Sheet (page)</th><th>Bench</th><th>Test</th><th>Result</th></tr>
+<tr><td>Power (2)</td><td>PWR1</td><td>Power-up on the carrier +5V (2 ms and 100 µs ramps)</td><td><span class="pill ok">Pass</span></td></tr>
+<tr><td>Power (2)</td><td>PWR2</td><td>Module pushed into a live slot (MES4-CIF rule 5 broken)</td><td><span class="pill na">Informative</span></td></tr>
+<tr><td>Power (2)</td><td>PWR3</td><td>19.4 A 10/1000 µs pulse on +5V (D2 rating), both polarities</td><td><span class="pill ok">Pass +</span> <span class="pill warn">− is the carrier's job</span></td></tr>
+<tr><td>Power (2)</td><td>PWR4</td><td>+5V swept 3.0–7.5 V: LEDs, VSENSE ADC code, U2 dropout, D2</td><td><span class="pill ok">Pass</span></td></tr>
+<tr><td>Power (2) + CAN (4)</td><td>PWR5</td><td>+3V3 under CAN traffic and a 50 mA pin-4 step</td><td><span class="pill ok">Pass</span></td></tr>
+<tr><td>Power (2)</td><td>BZ1</td><td>Buzzer, 4 kHz 50 % PWM</td><td><span class="pill warn">Pass, bring-up limit</span></td></tr>
+<tr><td>MCU (3)</td><td>MCU1</td><td>8 MHz HSE into PC14, R14 0 vs 22 Ω</td><td><span class="pill ok">Pass</span></td></tr>
+<tr><td>MCU (3)</td><td>MCU2</td><td>NRST: power-up, internal reset, button</td><td><span class="pill ok">Pass</span></td></tr>
+<tr><td>CAN (4)</td><td>CAN1</td><td>500 kbit/s on a 10 m bus with two 0.3 m stubs</td><td><span class="pill ok">Pass</span></td></tr>
+<tr><td>CAN (4)</td><td>CAN2</td><td>Carrier series resistors on CANH / CANL (MES4-CIF rule 8)</td><td><span class="pill ok">Rule confirmed</span></td></tr>
+<tr><td>Models</td><td>MDL1</td><td>U2 TLV76733 model against TI Fig. 7-12</td><td><span class="pill ok">Fits</span></td></tr>
+</table></div>
+
+<h2>2 · Findings and changes made</h2>
+<ul>
+<li><b>Buzzer current (BZ1).</b> With the coil modelled as 25 Ω plus inductance, beeping adds <b>69–95 mA</b> to the module's input current, depending on the coil inductance (0.1–1 mH, not published). The Power notes and BRINGUP step 12 say "≤ 80 mA". The real figure should be lower, because the buzzer's mechanical resonance raises its impedance at 4 kHz and the model leaves that out, but 80–95 mA is still possible. <b>Done:</b> BRINGUP step 12 pass limit is now "≤ 100 mA extra". Keep tones short: the coil dissipates 0.3–0.5 W while it beeps.</li>
+<li><b>Negative transients on +5V (PWR3).</b> When D2 conducts forward (+5V at −2.6 V at its 19.4 A rating), U2's body diode empties the 3V3 capacitors into it. 3V3 goes to <b>−1.7 V</b> for about 3 ms, while the STM32's absolute minimum is −0.3 V. This is MES4-CIF rule 4: reverse and surge protection is the carrier's job. The MES4-Carrier-EC's +5V comes from an isolated converter through F2 and FB1, so it can't do this. <b>Done:</b> MES4-CIF rule 4 and the rules box on sheet CAN_M2 now say to keep +5V above −0.3 V at the fingers.</li>
+<li><b>NRST release time (MCU2).</b> The MCU-sheet note says the pull-up "recharges C6 in ≈ 4 ms". The bench gives <b>4.9 ms</b> to VIH with the typical 40 kΩ, and 3.0–6.7 ms over the 25–55 kΩ range. <b>Done:</b> the MCU-sheet note and MES4-CIF §4a now say "≈ 5 ms (3–7 ms)". There's no functional impact.</li>
+<li><b>Hot-plug (PWR2).</b> Nothing on the module is overstressed (+5V peaks at 5.09 V, so D2 stays off), but the contacts carry a <b>96 A</b> spike for under a microsecond and the carrier socket dips to 2.3 V for about 5 µs. Rule 5 (no hot-plug) stands as written. That dip, plus the fingers mating in random order, is reason enough.</li>
+</ul>
+
+<h2 class="pb">3 · Power · sheet Power (page 2)</h2>
+<p class="grp"><b>Supply:</b> the MES4-Carrier-EC +5V path from its bench PWR5. U1 URB2405S-6WR3 output (0.1 Ω) → C6 22 µF / C7 → F2 1206L110 (0.12 Ω) → FB1 BLM21PG121SN1D → C8 10 µF / C9 at the socket. Model: <code>carrier5v.inc</code>.</p>
+<p class="grp"><b>Parts:</b> fingers 20/22 (3 nH) · C1 10 µF, C10, D2 SMF6.0A · U2 TLV76733 · C2/C5 10 µF, C3/C4/C7/C8 100 nF · LED1–LED4 with R1–R4, Q1/Q2/Q4, R5/R6/R13 · R8/R9/C9 → PB2 · BZ1, Q3, D3, R12. Loads: STM32 20 mA, X1 10 mA, U3 10 mA (recessive). Model: <code>module.inc</code>.</p>
+
+<h3>PWR1 · power-up (<code>pwr1_powerup.net</code>)</h3>
+<p>The carrier's U1 output ramps 0 → 5 V in 2 ms, or in 100 µs as a fast corner. U2 turns on when +5V passes its 2.2 V UVLO, and 3V3 reaches 3.0 V 0.45 ms later (500 µs soft-start). 3V3 doesn't overshoot (3.306 V max) and settles at 3.300 V. Peak input current is <b>0.16 A</b> with the 2 ms ramp and <b>0.36 A</b> with the 100 µs ramp, mostly C1 charging; U2's own inrush is held to 0.14 A by its soft-start. LED2 reaches 1 mA once +5V is above about 3.8 V and 3V3 above about 0.7 V (Q4's base), so it shows the rail is present, not that it's in regulation, as the notes say. Steady input current with these worst-case logic loads is 56 mA.</p>
+{{pwr1v}}
+{{pwr1i}}
+
+<h3>PWR2 · hot-plug, informative (<code>pwr2_hotplug.net</code>)</h3>
+<p>The module goes into a live slot: the carrier's C8 at the socket is at 5 V and the module's C1 is empty. The contact (10 mΩ, 3 nH, no bounce modelled) carries a <b>96 A</b> spike, rung out within about 1 µs: the two ceramics share 24 µC through almost no impedance, so the gold fingers will spark. The socket voltage drops to <b>2.3 V</b> and is back above 4.5 V within 4.5 µs. Module +5V peaks at 5.09 V, so D2 never reaches breakdown. The 20 mA it shows is its junction capacitance charging. U2 starts normally and 3V3 doesn't overshoot. Nothing here damages the module, but the spike and the dip land on everything else on the carrier's +5V. Back-powering through I/O fingers that mate before GND is not modelled. Rule 5 stays.</p>
+{{pwr2v}}
+{{pwr2i}}
+
+<h3>PWR3 · pulse at D2's rating (<code>pwr3_tvs_pulse.net</code>)</h3>
+<p>19.4 A, 10/1000 µs, injected straight at the fingers, positive at 1 ms and negative at 8.5 ms. The 5 V source here can't sink current, so D2 takes the whole positive pulse. <b>Positive:</b> +5V clamps at <b>10.3 V</b>, D2 carries 19.4 A and 0.24 J. U2 (18 V abs), C1 (25 V) and C10 (16 V) are fine. 3V3 doesn't move (3.306 V max). Because the source can't sink, the pulse's long tail keeps D2 clamping, and +5V sits near 7–8 V until 8.5 ms. PB2 peaks at 2.76 V: C9 filters out the brief 10.3 V peak, leaving 8.3 V / 3. That's below the 3.43 V worst case in the notes, and PB2 is FT_ea anyway. <b>Negative:</b> D2 conducts forward and +5V reaches −2.6 V. U2's body diode then discharges the 3V3 capacitors into the input, with up to 8.3 A flowing back through U2 in this model. 3V3 stays below −0.3 V from 8.5 to 11.4 ms and is back above 3.2 V at 12.1 ms. The MCU, X1 and U3 would be reverse-biased. See section 2: this is the carrier's job.</p>
+{{pwr3}}
+
+<h3>PWR4 · DC sweep of +5V (<code>pwr4_dc_sweep.net</code>)</h3>
+<p>+5V is swept from 3.0 to 7.5 V. The 3V3 load is the full 148 mA from the notes (MCU 20, U3 dominant into 60 Ω 67, X1 10, GPIO 1, pin 4 50 mA), with all four LEDs on.</p>
+<div class="tw"><table>
+<tr><th>Check</th><th>Simulated</th><th>Notes / limit</th><th>Result</th></tr>
+<tr><td>LED1 red (+5V)</td><td>2.76 mA at 4.75 V, 3.24 mA at 5.25 V</td><td>3.0 mA at 5.0 V</td><td><span class="pill ok">Pass</span></td></tr>
+<tr><td>LED2 green (3V3, Q4)</td><td>2.16 mA</td><td>≈ 2.1 mA</td><td><span class="pill ok">Pass</span></td></tr>
+<tr><td>LED3 white (CAN, Q1)</td><td>2.16 mA at 5.0 V, 1.92 mA at 4.75 V</td><td>≈ 2.1 mA</td><td><span class="pill ok">Pass</span></td></tr>
+<tr><td>LED4 yellow (USR, Q2)</td><td>2.96 mA</td><td>≈ 2.9 mA</td><td><span class="pill ok">Pass</span></td></tr>
+<tr><td>VSENSE ADC code (VDDA = real 3V3)</td><td>1965 / 2068 / 2172 at 4.75 / 5.00 / 5.25 V</td><td>BRINGUP step 10: 1965 / 2068 / 2172</td><td><span class="pill ok">Pass</span></td></tr>
+<tr><td>3V3 in regulation (≥ 3.25 V) at 148 mA</td><td>from +5V = 3.38 V; 3.0 V (U3 VCC min) at 3.13 V</td><td>+5V min 4.75 V: 1.4 V of margin</td><td><span class="pill ok">Pass</span></td></tr>
+<tr><td>Module input current, 148 mA logic + 4 LEDs</td><td>159 mA at 5.0 V</td><td>≤ 240 mA incl. buzzer (MES4-CIF rule 2)</td><td><span class="pill ok">Pass</span></td></tr>
+<tr><td>U2 dissipation at 5.25 V, 148 mA</td><td>0.29 W</td><td>0.29 W → T<sub>J</sub> 92 °C at 70 °C ambient</td><td><span class="pill ok">Pass</span></td></tr>
+<tr><td>D2 onset (typical VBR 7.0 V model)</td><td>1 mA at 6.94 V, 10 mA at 7.00 V</td><td>VBR min 6.67 V at 10 mA; CIF max 5.5 V</td><td><span class="pill ok">Pass</span></td></tr>
+</table></div>
+{{pwr4l}}
+{{pwr4v}}
+
+<h3>PWR5 · 3V3 load steps (<code>pwr5_3v3_load.net</code>)</h3>
+<p>From 1.0 to 1.5 ms, CAN traffic at the bit-stuffing worst case (5 dominant / 1 recessive): U3 draws its 17 mA maximum plus 50 mA into the bus while dominant. At 2 ms the carrier adds 50 mA on pin 4 in 1 µs, and at 3 ms both loads switch off. 3V3 stays within <b>3.293–3.307 V</b> (±7 mV) throughout, and module +5V dips to 4.973 V at most. The U2 model is fitted to a 1 µF output, so the module's ≈ 14 µF (C2 + C5 + 4 × 100 nF) makes these figures conservative.</p>
+{{pwr5}}
+
+<h3>BZ1 · buzzer PWM (<code>bz1_buzzer_pwm.net</code>)</h3>
+<p>PB7 drives Q3 at 4 kHz, 50 %, for 10 ms. The coil is modelled as 25 Ω in series with 0.1, 0.3 or 1 mH (the inductance isn't published), with D3 freewheeling. Mechanical resonance is not modelled, so the currents are upper bounds.</p>
+<div class="tw"><table>
+<tr><th>Coil inductance</th><th>0.1 mH</th><th>0.3 mH</th><th>1 mH</th><th>Limit</th></tr>
+<tr><td>Extra module input current</td><td>95 mA</td><td>89 mA</td><td>69 mA</td><td>BRINGUP step 12: ≤ 100 mA (was 80)</td></tr>
+<tr><td>Coil current: average / peak</td><td>98 / 197 mA</td><td>96 / 197 mA</td><td>89 / 189 mA</td><td>200 mA DC if PB7 sticks HIGH</td></tr>
+<tr><td>Coil dissipation while beeping</td><td>0.47 W</td><td>0.43 W</td><td>0.32 W</td><td>1 W DC (note: never DC)</td></tr>
+<tr><td>Q3 drain peak</td><td>5.87 V</td><td>5.87 V</td><td>5.89 V</td><td>AO3400A 30 V</td></tr>
+<tr><td>+5V ripple at the module</td><td>53 mV p-p</td><td>53 mV p-p</td><td>51 mV p-p</td><td>4.75 V min</td></tr>
+<tr><td>+3V3 ripple</td><td>72 µV p-p</td><td>66 µV p-p</td><td>54 µV p-p</td><td>—</td></tr>
+<tr><td>VSENSE (PB2): offset / ripple</td><td>−10.1 / 1.9 LSB</td><td>−9.4 / 1.8 LSB</td><td>−7.2 / 1.4 LSB</td><td>firmware rule F5</td></tr>
+</table></div>
+<p>The circuit is fine: Q3 sees under 6 V and D3's recovery spike is only 3 mA. The current is the item to watch (section 2). Firmware rule F5 (read VSENSE with the buzzer silent) is right, but the effect is small. While the buzzer runs, the reading drops by about 9 LSB (23 mV on the 5 V reading) plus 2 LSB of ripple. That drop is real: +5V sags across the carrier's F2 and FB1.</p>
+{{bz1v}}
+{{bz1i}}
+{{bz1r}}
+
+<h2 class="pb">4 · MCU · sheet MCU (page 3)</h2>
+<p class="grp"><b>Parts:</b> X1 SX2M 8 MHz XO → R14 22 Ω → PC14 (HSE bypass), routed lengths from the PCB (HSE_XO 2.29 mm, HSE_IN 2.04 mm, F.Cu over In1 GND, no vias) · NRST: STM32 pull-up R<sub>PU</sub> 25–55 kΩ, C6 100 nF, 30 mm to the fingers.</p>
+
+<h3>MCU1 · HSE clock edge (<code>mcu1_hse_clock.net</code>)</h3>
+<p>X1's edge rate and output resistance aren't published, so this uses a fast corner: 1.5 ns edges from 15 Ω. The 4.3 mm of trace is far shorter than an edge, so it is lumped with the X1 and LQFP-32 lead inductance (5.2 nH total) into PC14's 5.6 pF. <b>Without R14</b>, PC14 rings to 3.55 V and −0.25 V. <b>With R14 = 22 Ω</b>, it peaks at 3.37 V and −0.07 V, about 3.5× less ringing, and the 20–80 % edge slows by only 0.03 ns (0.84 → 0.87 ns). Neither case forward-biases PC14's clamp diodes (injection under 1 nA), and the duty cycle at VDD/2 stays 50.0 %, inside the PLL's 45–55 %. R14 does its job.</p>
+{{mcu1}}
+
+<h3>MCU2 · NRST (<code>mcu2_nrst.net</code>)</h3>
+<p>3V3 rises as in PWR1. The STM32 holds NRST low until VDD passes about 2.0 V (POR / BOR), then R<sub>PU</sub> charges C6. NRST reaches VIH (0.7 × VDD) <b>3.0 / 4.9 / 6.7 ms</b> after POR for R<sub>PU</sub> 25 / 40 / 55 kΩ. A 20 µs internal reset pulse (driver assumed 50 Ω) pulls C6 down to <b>53–65 mV</b>, well below VIL (0.99 V), so ST's 20 µs pulse still reaches the pin through 100 nF. Recovery takes 3.0–6.5 ms. A 1 ms button press takes NRST to ≈ 0 V, with 3.0–6.6 ms recovery.</p>
+{{mcu2}}
+
+<h2 class="pb">5 · CAN and M.2 · sheet CAN_M2 (page 4)</h2>
+<p class="grp"><b>Parts:</b> U3 SN65HVD230 (Rs = 0 Ω, high speed) · D1 NUP2105L · R7 120 Ω + JP1 · fingers 1/3. U3 bus side modelled from TI SLOS346O: dominant VOD 2.0 V typical / 1.5 V minimum into 60 Ω, 35–45 ns differential edges, receiver 35 kΩ to 2.3 V.</p>
+
+<h3>CAN1 · 500 kbit/s on a 10 m bus (<code>can1_bus_500k.net</code>)</h3>
+<p>This module (A, JP1 bridged) transmits D R D D D D D R D R R R R R at 2 µs per bit. Listening are two MES4-MCUs on 0.3 m stubs at 3 m and 6 m (JP1 open) and a terminated MES4-MCU at 10 m (B). Every node has D1 and U3's input capacitance on the bus. The cable is 120 Ω differential at 5 ns/m.</p>
+<div class="tw"><table>
+<tr><th>Check</th><th>Typical driver</th><th>Weakest driver</th><th>Limit</th></tr>
+<tr><td>Dominant VOD at A / B / stub</td><td>2.00 / 2.00 / 2.00 V</td><td>1.50 / 1.50 / 1.50 V</td><td>≥ 0.9 V (VIT+ max)</td></tr>
+<tr><td>Lowest dominant VOD, stub at 3 m</td><td>1.90 V</td><td>1.47 V</td><td>≥ 0.9 V</td></tr>
+<tr><td>Ring-back on the recessive edge, stub</td><td>2.7 mV</td><td>3.7 mV</td><td>&lt; 0.5 V (VIT− min)</td></tr>
+<tr><td>Recessive VID at the sample point (87.5 %)</td><td>≈ 0 V</td><td>≈ 0 V</td><td>&lt; 0.5 V</td></tr>
+<tr><td>TX edge → B crosses 0.9 V / 0.5 V</td><td>61 / 106 ns</td><td>66 / 88 ns</td><td>sample point 1.75 µs</td></tr>
+</table></div>
+<p>The bus is clean: 0.3 m stubs and the NUP2105L's 26 pF per line are negligible at 500 kbit/s. The edge-to-B times include the 50 ns cable but not U3's own 35–120 ns driver and receiver delays. Even with those added twice for arbitration (t<sub>LOOP</sub> ≤ 135 ns), the round trip stays under 0.6 µs, far inside the 1.75 µs sample point.</p>
+{{can1}}
+{{can1z}}
+
+<h3>CAN2 · series resistors on CANH / CANL (<code>can2_series_r.net</code>)</h3>
+<p>MES4-CIF rule 8 says "no series resistors on CAN". Here a carrier adds Rs in each line between the fingers and a bus terminated at both ends (60 Ω):</p>
+<div class="tw"><table>
+<tr><th>Rs per line</th><th>0 Ω</th><th>22 Ω</th><th>47 Ω</th><th>100 Ω</th></tr>
+<tr><td>Dominant VOD at the bus, typical driver</td><td>2.00 V</td><td>1.25 V</td><td>0.88 V</td><td>0.54 V</td></tr>
+<tr><td>Dominant VOD at the bus, weakest driver</td><td>1.50 V</td><td>1.03 V</td><td>0.76 V</td><td>0.49 V</td></tr>
+</table></div>
+<p>22 Ω already falls below the 1.5 V that ISO 11898-2 asks of a transmitter. From 47 Ω, receivers with a 0.9 V threshold can miss dominant bits. Rule 8 is right as written: TVS only, no resistors.</p>
+
+<h2>6 · Not simulated, and why</h2>
+<ul>
+<li><b>I²C1:</b> the pull-ups are on the carrier. MES4-Carrier-EC MAIN1 covers 400 kHz with 2.2 kΩ and 60 pF (111 ns rise).</li>
+<li><b>ESD on CANH / CANL and the fingers:</b> how the current splits between D1 and U3 depends on U3's internal clamp, which TI doesn't publish. Datasheet ratings: NUP2105L IEC 61000-4-2 ±30 kV contact; SN65HVD230 bus pins ±16 kV HBM.</li>
+<li><b>CAN shorted to 24 V:</b> above U3's 16 V absolute maximum, so destroyed by datasheet (MES4-CIF rule 9). Nothing to simulate.</li>
+<li><b>Pin 4 (3V3) shorted:</b> U2 folds back to 150–350 mA (DRV package), so the module draws ≤ ≈ 0.37 A from +5V. U2 then dissipates up to 1.8 W and cycles in thermal shutdown (180 °C). That's thermal behaviour, not modelled.</li>
+<li><b>SWD, VCP, NRST and GPIO fingers:</b> short, low-speed, carrier-specific lines. USB D+/D− are unused.</li>
+<li><b>STM32 internals:</b> PLL lock, ADC sampling and the exact POR / BOR timing are taken from ST's data, not simulated.</li>
+</ul>
+
+<h2>7 · Models and assumptions</h2>
+<ul>
+<li>LTspice 17.2.4 (macOS). Benches and shared models are in <code>MES4-MCU/sim/</code>: <code>models.inc</code> (device models), <code>module.inc</code> (module power network) and <code>carrier5v.inc</code> (MES4-Carrier-EC +5V). Run <code>python3 run_sims.py</code>, then <code>python3 make_report.py</code>.</li>
+<li><b>U2 TLV76733:</b> a behavioural model fitted to TI SLVSE84D. UVLO 2.2 V / 130 mV hysteresis, 500 µs soft-start, current limit 1.3 A folding back to 0.25 A, dropout 0.9 Ω, no sinking, PMOS body diode OUT → IN, −60 dB supply ripple above 1 kHz. The control loop (PI, 6 A/V, plus a 0.15 µs pole) is tuned to TI Fig. 7-12. MDL1 below checks the fit: −109 / +105 mV against TI's ≈ −120 / +100 mV. Steps from a near-zero load are worse in silicon (TI Fig. 7-11: about −400 mV from 1 mA), but the module never draws less than about 30 mA from 3V3.</li>
+<li><b>U3 SN65HVD230:</b> bus-side behavioural model. Dominant CANH from VCC − 0.1 V and CANL to 0.75 V through R<sub>d</sub>/2 each, with R<sub>d</sub> = 13.5 Ω (typical, VOD 2.0 V) or 38 Ω (minimum, 1.5 V). VCC current is 10 mA plus the bus current. Driver and receiver propagation delays are not modelled.</li>
+<li><b>D2 SMF6.0A:</b> VBR 7.0 V at 10 mA, R<sub>s</sub> 0.16 Ω (10.3 V at 19.4 A), 1.5 nF. <b>D1 NUP2105L:</b> two anti-series 29 V junctions per line, 0.5 Ω, 26 pF.</li>
+<li><b>Q3 AO3400A and D3 1N4148WS:</b> the same models as the MES4-Carrier-EC benches. <b>Q1 / Q2 / Q4 MMBT3904:</b> 2N3904 parameters. <b>LEDs:</b> fitted to the forward voltages in the Power notes (red / yellow 2.0 V at 3 mA, green / white 2.8 V at 2 mA). The LED currents therefore check the transistor stages and the supply range, not the LEDs themselves.</li>
+<li><b>Ceramic capacitors</b> at their DC-bias value: 10 µF 25 V 0805 = 5 µF at 5 V and 6.9 µF at 3.3 V (Power notes). 100 nF parts with 20 mΩ ESR.</li>
+<li><b>STM32G0B1:</b> 20 mA at 64 MHz once VDD > 1.6 V; GPIO output 40 Ω; PC14 5 pF plus a 3 nH lead, clamp diodes to the rails; NRST pull-up 25 / 40 / 55 kΩ, POR / BOR release at about 2.0 V, internal reset driver 50 Ω (assumed).</li>
+<li><b>X1 SX2M:</b> 1.5 ns edges from 15 Ω (fast corner; the datasheet gives neither). <b>BZ1 KLJ-5018-5040:</b> 25 Ω coil with inductance stepped 0.1–1 mH; mechanical resonance not modelled.</li>
+<li><b>Carrier +5V:</b> the MES4-Carrier-EC network from its bench PWR5. The URB2405S-6WR3 start-up ramp isn't published; 2 ms and 100 µs are used. Benches with a fixed supply ramp it from 0 V over the first 20 µs so LTspice starts from rest.</li>
+<li><b>CAN cable:</b> two ideal 60 Ω lines at 5 ns/m (120 Ω differential). Common-mode impedance and cable loss are not modelled.</li>
+</ul>
+
+<h3>MDL1 · U2 model check (<code>mdl1_tlv767_fit.net</code>)</h3>
+<p>The same test as TI Fig. 7-12: VIN 5 V, COUT 1 µF, 250 → 850 mA in 0.75 µs, then back. The model dips to 3.190 V (−109 mV) and overshoots to 3.405 V (+105 mV), against TI's ≈ −120 / +100 mV. It recovers more slowly than the silicon: about 40 µs, against roughly 10 µs in TI's plot. That makes the PWR5 and BZ1 3V3 figures pessimistic, not optimistic.</p>
+{{mdl1}}
+</main></body></html>
